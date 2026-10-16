@@ -1,0 +1,193 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>The Code Map α</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;1,400;1,500&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+  :root{
+    --bg:#F2F4F7; --ink:#1B2130; --muted:#5B6474; --rule:#D5DAE3;
+    --sheet:#FFFFFF; --sheet-ink:#1B2130; --sheet-rule:#8A93A5;
+    --A:#D9483B; --B:#2F6FD6; --C:#E8B920;
+    --body:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+    --display:"Spectral", Georgia, "Times New Roman", serif;
+    --mono:"JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){ --bg:#161A21; --ink:#E6E9EF; --muted:#9AA3B4; --rule:#2B3140; }
+  }
+  :root[data-theme="dark"]{ --bg:#161A21; --ink:#E6E9EF; --muted:#9AA3B4; --rule:#2B3140; }
+
+  body{ background:var(--bg); color:var(--ink); font-family:var(--body); font-size:16px; line-height:1.5;
+        padding-block:32px 56px; padding-inline:20px; }
+  .wrap{ max-width:980px; margin:0 auto; }
+  h1{ font-family:var(--display); font-weight:500; font-size:clamp(28px,4vw,38px); line-height:1.15; margin:0 0 6px; text-wrap:balance; }
+  h1 .m{ font-style:italic; }
+  .lede{ max-width:64ch; color:var(--muted); margin:0 0 26px; }
+  .lede b{ color:var(--ink); font-weight:600; }
+  .levels{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:0 0 26px; }
+  .lvl{ border-top:2px solid var(--rule); padding-top:8px; font-size:14.5px; }
+  .lvl .k{ font-family:var(--mono); font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
+  .lvl.on{ border-top-color:var(--ink); }
+  .lvl .t{ font-family:var(--display); font-size:18px; margin:2px 0 2px; }
+  .lvl p{ margin:0; color:var(--muted); }
+  @media (max-width:640px){ .levels{ grid-template-columns:1fr; } }
+
+  figure{ margin:0; }
+  .sheet{ background:var(--sheet); border:1px solid var(--rule); border-radius:6px; padding:12px; overflow-x:auto; }
+  svg{ display:block; width:100%; max-width:100%; height:auto; min-width:640px; }
+  figcaption{ max-width:70ch; margin:14px 2px 0; font-size:15px; color:var(--muted); }
+  figcaption b{ color:var(--ink); font-weight:600; }
+
+  .chips{ display:flex; flex-wrap:wrap; gap:8px 10px; margin:26px 0 0; padding:0; list-style:none; }
+  .chip{ display:flex; align-items:center; gap:9px; border:1px solid var(--rule); border-radius:4px; padding:6px 10px 6px 7px; font-size:14px; }
+  .chip .sw{ width:18px; height:18px; border-radius:3px; border:1px solid #8A93A5; flex:none; }
+  .chip code{ font-family:var(--mono); font-weight:700; font-size:13.5px; letter-spacing:.06em; }
+  .chip span{ color:var(--muted); }
+  .note{ max-width:64ch; margin:22px 0 0; font-size:15px; color:var(--muted); }
+  .note b{ color:var(--ink); font-weight:600; }
+</style>
+
+<div class="wrap">
+  <h1>Level 2: every point of <span class="m">I</span> gets a code</h1>
+  <p class="lede">A formula <i>F</i>(<i>A</i>, <i>B</i>, <i>C</i>) never looks at <i>where</i> a point is — only at <b>which of the sets it belongs to</b>. That information is a string of three bits, the point's code. The map that assigns it is <i>α</i>.</p>
+
+  <div class="levels">
+    <div class="lvl"><div class="k">Level 1</div><div class="t">Sets</div><p>Universe <i>I</i>, subsets <i>A</i>, <i>B</i>, <i>C</i> ⊆ <i>I</i>. Points live here.</p></div>
+    <div class="lvl on"><div class="k">Level 2 — this picture</div><div class="t">Codes</div><p><i>α</i> : <i>I</i> → {0,1}³, &nbsp;<i>x</i> ↦ (<i>x</i>∈<i>A</i>?, <i>x</i>∈<i>B</i>?, <i>x</i>∈<i>C</i>?).</p></div>
+    <div class="lvl"><div class="k">Level 3</div><div class="t">Truth table</div><p><i>f</i> : {0,1}³ → {0,1}, read off the text of the formula.</p></div>
+  </div>
+
+  <figure>
+    <div class="sheet">
+    <svg viewBox="0 0 1040 560" role="img" aria-label="Three overlapping sets A, B, C inside a universe I cut it into eight regions, each labelled with a three-bit code; on the right the eight vertices of the cube {0,1}^3 carry the same codes and colours. The map alpha sends every point of a region to that region's vertex. A sample point x in A and C but not B goes to vertex 101.">
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="#1B2130"/>
+        </marker>
+        <marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#D9483B"/></marker>
+        <marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6FD6"/></marker>
+        <marker id="arrC" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C79A0E"/></marker>
+      </defs>
+
+      <!-- ===== Level 1: the universe I with three sets ===== -->
+      <rect x="30" y="70" width="430" height="440" fill="#FFFFFF" stroke="#8A93A5" stroke-width="1.5"/>
+      <text x="44" y="96" font-family="Spectral, Georgia, serif" font-style="italic" font-size="22" fill="#1B2130">I</text>
+      <text x="245" y="50" text-anchor="middle" font-family="'Source Sans 3', system-ui, sans-serif" font-size="13" letter-spacing="1.5" fill="#5B6474">LEVEL 1 · POINTS AND SETS</text>
+
+      <circle cx="245" cy="235" r="118" fill="#D9483B" fill-opacity="0.42" stroke="#D9483B" stroke-width="1.5"/>
+      <circle cx="175" cy="345" r="118" fill="#2F6FD6" fill-opacity="0.42" stroke="#2F6FD6" stroke-width="1.5"/>
+      <circle cx="315" cy="345" r="118" fill="#E8B920" fill-opacity="0.42" stroke="#C79A0E" stroke-width="1.5"/>
+
+      <text x="352" y="138" font-family="Spectral, Georgia, serif" font-style="italic" font-size="22" fill="#D9483B">A</text>
+      <text x="62" y="462" font-family="Spectral, Georgia, serif" font-style="italic" font-size="22" fill="#2F6FD6">B</text>
+      <text x="418" y="462" font-family="Spectral, Georgia, serif" font-style="italic" font-size="22" fill="#C79A0E">C</text>
+
+      <!-- region codes -->
+      <g font-family="'JetBrains Mono', Menlo, monospace" font-size="14" font-weight="500" fill="#1B2130" text-anchor="middle">
+        <text x="75"  y="120">000</text>
+        <text x="245" y="156">100</text>
+        <text x="105" y="400">010</text>
+        <text x="385" y="400">001</text>
+        <text x="185" y="283">110</text>
+        <text x="245" y="315">111</text>
+        <text x="245" y="410">011</text>
+        <text x="312" y="302" font-weight="700">101</text>
+      </g>
+
+      <!-- the sample point x -->
+      <circle cx="296" cy="262" r="5" fill="#1B2130"/>
+      <circle cx="296" cy="262" r="10" fill="none" stroke="#1B2130" stroke-width="1.5"/>
+      <text x="281" y="253" font-family="Spectral, Georgia, serif" font-style="italic" font-size="19" fill="#1B2130">x</text>
+
+      <!-- ===== the map alpha ===== -->
+      <line x1="472" y1="300" x2="606" y2="300" stroke="#1B2130" stroke-width="2.2" marker-end="url(#arr)"/>
+      <text x="539" y="286" text-anchor="middle" font-family="Spectral, Georgia, serif" font-style="italic" font-size="26" fill="#1B2130">α</text>
+
+      <!-- worked example for x -->
+      <g font-family="'Source Sans 3', system-ui, sans-serif" font-size="14" fill="#1B2130">
+        <text x="474" y="352" font-family="Spectral, Georgia, serif" font-style="italic" font-size="16">for the point x:</text>
+        <text x="474" y="378"><tspan font-style="italic">x</tspan> ∈ <tspan font-style="italic" fill="#D9483B">A</tspan> ?  yes</text>
+        <text x="600" y="378" text-anchor="end" font-family="'JetBrains Mono', Menlo, monospace" font-weight="700">1</text>
+        <text x="474" y="400"><tspan font-style="italic">x</tspan> ∈ <tspan font-style="italic" fill="#2F6FD6">B</tspan> ?  no</text>
+        <text x="600" y="400" text-anchor="end" font-family="'JetBrains Mono', Menlo, monospace" font-weight="700">0</text>
+        <text x="474" y="422"><tspan font-style="italic">x</tspan> ∈ <tspan font-style="italic" fill="#C79A0E">C</tspan> ?  yes</text>
+        <text x="600" y="422" text-anchor="end" font-family="'JetBrains Mono', Menlo, monospace" font-weight="700">1</text>
+        <line x1="474" y1="432" x2="600" y2="432" stroke="#8A93A5" stroke-width="1"/>
+        <text x="474" y="454" font-family="Spectral, Georgia, serif" font-style="italic" font-size="16">α(x) =</text>
+        <text x="600" y="454" text-anchor="end" font-family="'JetBrains Mono', Menlo, monospace" font-weight="700" font-size="16">101</text>
+      </g>
+
+      <!-- ===== Level 2 target: the cube {0,1}^3 ===== -->
+      <text x="787" y="50" text-anchor="middle" font-family="'Source Sans 3', system-ui, sans-serif" font-size="13" letter-spacing="1.5" fill="#5B6474">LEVEL 2 · CODES {0,1}³</text>
+
+      <!-- axis key -->
+      <g font-family="'Source Sans 3', system-ui, sans-serif" font-size="13" fill="#1B2130">
+        <line x1="650" y1="96" x2="690" y2="96" stroke="#D9483B" stroke-width="2" marker-end="url(#arrA)"/>
+        <text x="700" y="100">1st bit: <tspan font-style="italic" font-family="Spectral, Georgia, serif" font-size="15" fill="#D9483B">A</tspan></text>
+        <line x1="790" y1="112" x2="790" y2="80" stroke="#2F6FD6" stroke-width="2" marker-end="url(#arrB)"/>
+        <text x="800" y="100">2nd bit: <tspan font-style="italic" font-family="Spectral, Georgia, serif" font-size="15" fill="#2F6FD6">B</tspan></text>
+        <line x1="885" y1="108" x2="915" y2="82" stroke="#C79A0E" stroke-width="2" marker-end="url(#arrC)"/>
+        <text x="925" y="100">3rd bit: <tspan font-style="italic" font-family="Spectral, Georgia, serif" font-size="15" fill="#C79A0E">C</tspan></text>
+      </g>
+
+      <!-- edges -->
+      <g stroke="#8A93A5" stroke-width="1.4" fill="none">
+        <!-- front face c=0 -->
+        <line x1="640" y1="470" x2="860" y2="470"/>
+        <line x1="640" y1="250" x2="860" y2="250"/>
+        <line x1="640" y1="470" x2="640" y2="250"/>
+        <line x1="860" y1="470" x2="860" y2="250"/>
+        <!-- back face c=1 -->
+        <line x1="715" y1="405" x2="935" y2="405"/>
+        <line x1="715" y1="185" x2="935" y2="185"/>
+        <line x1="715" y1="405" x2="715" y2="185"/>
+        <line x1="935" y1="405" x2="935" y2="185"/>
+        <!-- depth edges -->
+        <line x1="640" y1="470" x2="715" y2="405"/>
+        <line x1="860" y1="470" x2="935" y2="405"/>
+        <line x1="640" y1="250" x2="715" y2="185"/>
+        <line x1="860" y1="250" x2="935" y2="185"/>
+      </g>
+
+      <!-- vertices, filled with the colour of their region -->
+      <g stroke="#1B2130" stroke-width="1.5">
+        <circle cx="640" cy="470" r="15" fill="#FFFFFF"/>
+        <circle cx="860" cy="470" r="15" fill="#EFB2AD"/>
+        <circle cx="640" cy="250" r="15" fill="#A8C3EE"/>
+        <circle cx="860" cy="250" r="15" fill="#9E96BE"/>
+        <circle cx="715" cy="405" r="15" fill="#F5E2A1"/>
+        <circle cx="715" cy="185" r="15" fill="#C3BF97"/>
+        <circle cx="935" cy="185" r="15" fill="#BDA57C"/>
+        <circle cx="935" cy="405" r="15" fill="#ECB572" stroke-width="3"/>
+      </g>
+
+      <g font-family="'JetBrains Mono', Menlo, monospace" font-size="14" font-weight="500" fill="#1B2130">
+        <text x="640" y="502" text-anchor="middle">000</text>
+        <text x="860" y="502" text-anchor="middle">100</text>
+        <text x="618" y="255" text-anchor="end">010</text>
+        <text x="838" y="276" text-anchor="end">110</text>
+        <text x="722" y="432">001</text>
+        <text x="715" y="166" text-anchor="middle">011</text>
+        <text x="958" y="190">111</text>
+        <text x="958" y="410" font-weight="700">101</text>
+      </g>
+      <!-- x lands here -->
+      <text x="958" y="428" font-family="Spectral, Georgia, serif" font-style="italic" font-size="15" fill="#1B2130">= α(x)</text>
+    </svg>
+    </div>
+    <figcaption><b>The map α sends every point of the universe to a vertex of the cube.</b> All points of one region of the Euler diagram — one constituent — have the same three answers, so they all land on the same vertex; each vertex is painted with the colour of its region. Eight regions, eight vertices, one-to-one. The universe on the left can be anything (a plane, a finite set); the cube on the right is always {0,1}³.</figcaption>
+  </figure>
+
+  <ul class="chips">
+    <li class="chip"><span class="sw" style="background:#FFFFFF"></span><code>000</code><span>outside all three</span></li>
+    <li class="chip"><span class="sw" style="background:#EFB2AD"></span><code>100</code><span>only <i>A</i></span></li>
+    <li class="chip"><span class="sw" style="background:#A8C3EE"></span><code>010</code><span>only <i>B</i></span></li>
+    <li class="chip"><span class="sw" style="background:#F5E2A1"></span><code>001</code><span>only <i>C</i></span></li>
+    <li class="chip"><span class="sw" style="background:#9E96BE"></span><code>110</code><span><i>A</i> and <i>B</i>, not <i>C</i></span></li>
+    <li class="chip"><span class="sw" style="background:#ECB572"></span><code>101</code><span><i>A</i> and <i>C</i>, not <i>B</i></span></li>
+    <li class="chip"><span class="sw" style="background:#C3BF97"></span><code>011</code><span><i>B</i> and <i>C</i>, not <i>A</i></span></li>
+    <li class="chip"><span class="sw" style="background:#BDA57C"></span><code>111</code><span>in all three</span></li>
+  </ul>
+
+  <p class="note"><b>Why the proof chose <i>I</i> = {0,1}³.</b> Normally the left and right pictures are different objects and α is a genuine map between them. If you take the universe to be the cube itself, with <i>A</i> = {codes whose 1st bit is 1}, <i>B</i> = {2nd bit is 1}, <i>C</i> = {3rd bit is 1}, then the two pictures coincide: every region is a single point, and α(<i>x</i>) = <i>x</i>. That is the trick that makes every constituent non-empty — nothing more.</p>
+</div>
+
+</body></html>
