@@ -1,0 +1,194 @@
+\section{Принцип двойственности}
+
+Пусть $F(A_1,\dots,A_n)$ "--- некоторая логическая формула, написанная
+с помощью символов (не обязательно всех) операций пересечения, соединения
+и дополнения, пустого $\emptyset$ и унитарного $I$ множеств. (Если
+в $F(A_1,\dots,A_n)$ присутствуют символы разности $A\setminus B$
+и симметрической разности $A\sd B$, то их можно с помощью формул (1.1)
+и (1.2) исключить.)
+
+Формулу $F^*(A_1,\dots,A_n)$ будем называть \emph{двойственной} формуле
+$F(A_1,\dots,A_n)$, если она может быть получена из последней путем
+формальной замены (<<преобразования двойственности>>) символов ($\cap$ на
+$\cup$, $\cup$ на $\cap$, $\emptyset$ на $I$, $I$ на $\emptyset$) и,
+возможно, последующих тождественных преобразований. Примерами двойственных
+формул являются
+\[
+\begin{gathered}
+(A\cap B)\cup(\ov A\cap I)\quad\text{и}\quad(A\cup B)\cap(\ov A\cup\emptyset);\\
+\ov{(\ov A\cup B)\cap C}\quad\text{и}\quad\ov{(\ov A\cap B)\cup C};\\
+(A\cap B)\cup A\quad\text{и}\quad A.
+\end{gathered}
+\]
+Если $F(A_1,\dots,A_n)\equiv F^*(A_1,\dots,A_n)$ (т.\,е. двойственные
+формулы тождественны), формулу $F(A_1,\dots,A_n)$ будем называть
+\emph{самодвойственной}. Примером самодвойственной формулы является
+\begin{equation}\tag{1.6}
+(A\cap B)\cup(A\cap C)\cup(B\cap C).
+\end{equation}
+Действительно,\fixed{в оригинале четвертый сомножитель после раскрытия скобок напечатан как
+$(B\cup C\cup C)$; это сомножитель $(B\cup C)\cup B$, т.\,е.
+$(B\cup C\cup B)$ (на результат не влияет).}
+\begin{align*}
+&(A\cap B)\cup(A\cap C)\cup(B\cap C)\equiv[(A\cup A)\cap(A\cup C)\cap(B\cup A)\cap(B\cup C)]\cup(B\cap C)\equiv\\
+&\equiv[A\cap(A\cup C)\cap(A\cup B)\cap(B\cup C)]\cup(B\cap C)\equiv(A\cup B)\cap(A\cup B\cup C)\cap{}\\
+&\cap(A\cup B\cup B)\cap(B\cup C\cup B)\cap(A\cup C)\cap(A\cup C\cup C)\cap{}\\
+&\cap(A\cup B\cup C)\cap(B\cup C\cup C)\equiv(A\cup B)\cap(A\cup B\cup C)\cap{}\\
+&\cap(A\cup B)\cap(B\cup C)\cap(A\cup C)\cap(A\cup C)\cap(A\cup B\cup C)\cap{}\\
+&\cap(B\cup C)\equiv(A\cup B)\cap(A\cup B\cup C)\cap(B\cup C)\cap(A\cup C)\equiv{}\\
+&\equiv(A\cup B)\cap(B\cup C)\cap(A\cup C).
+\end{align*}
+
+\bookpage{20}%
+Очевидно, также, что если $F(A_1,\dots,A_n)=A_k$ ($1\le k\le n$), то
+$F(A_1,\dots,A_n)$ "--- самодвойственная формула.
+
+Тождества в алгебре множеств можно рассматривать как теоремы, путь
+к доказательствам которых лежит через тождественные преобразования.
+(В исчислении высказываний этим преобразованиям соответствуют элементарные
+рассуждения формальной логики [24, 84].) Пусть
+\begin{equation}\tag{1.7}
+F(A_1,\dots,A_n)\equiv\Phi(A_1,\dots,A_n)
+\end{equation}
+"--- тождество, записанное с помощью символов $\cap$, $\cup$,
+${}^{\overline{\phantom{a}}}$, $\emptyset$ и $I$. Нетрудно заметить, что
+если в тождествах $1^\circ$--$19^\circ$ \S\,1 произведем упомянутое выше
+преобразование двойственности (т.\,е. заменим $\cap$ на $\cup$, $\cup$ на
+$\cap$, $\emptyset$ на $I$ и $I$ на $\emptyset$), то получим ту же систему
+тождеств $1^\circ$--$19^\circ$. Отсюда следует, что при этом
+преобразовании тождество (1.7) также сохраняется:
+\begin{equation}\tag{1.8}
+F^*(A_1,\dots,A_n)\equiv\Phi^*(A_1,\dots,A_n).
+\end{equation}
+(Таким образом, каждой теореме в алгебре множеств соответствует
+двойственная теорема.)
+
+Заметим, что если множества, определяемые формулами $F(A_1,\dots,A_n)$
+и $\Phi(A_1,\dots,A_n)$, совпадают лишь при некотором фиксированном выборе
+множеств $A_1,\dots,A_n$ (т.\,е. (1.7) является равенством, а не
+тождеством), то двойственные им формулы будут, вообще, определять
+различные множества.
+
+\tikzset{hat/.style={pattern=north east lines,pattern color=black!70}}
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=0.75]
+ \fill[hat] (-1,0) arc (180:0:1) -- cycle;
+ \fill[hat] (2,0) arc (0:-180:2) -- cycle;
+ \draw (-1,0) arc (180:0:1);
+ \draw (2,0) arc (0:-180:2);
+ \draw[dashed] (-2,0) -- (-1,0) (1,0) -- (2,0);
+ \draw (-1,0) -- (1,0);
+ \draw[->] (-2.6,0) -- (2.8,0) node[below]{$x_1$};
+ \draw[->] (0,-2.4) -- (0,1.6) node[left]{$x_2$};
+ \node[below right] at (0,0){\small 0}; \node[above] at (1.15,0){\small 1}; \node[above] at (2.15,0){\small 2};
+ \node at (0.9,-1.0){$\Omega$};
+\end{tikzpicture}
+\figcap{Рис. 6.}
+\end{figure}
+
+{\small
+\noindent\textbf{Пример 1.} Пусть $A$, $B$ и $C$ "--- области на
+плоскости $x_1Ox_2$, определяемые неравенствами
+$A\equiv(4-x_1^2-x_2^2\ge0)$ (круг радиуса два с центром в начале
+координат); $B\equiv(x_2\ge0)$ (верхняя полуплоскость);
+$C\equiv(1-x_1^2-x_2^2\ge0)$ (круг радиуса один с центром в начале
+координат). Легко проверить, что множества
+$M\equiv(C\cap B)\cup(A\cap\ov B)$ и $N\equiv(C\cup\ov B)\cap A$ совпадают
+и определяют область $\Omega$ (заштрихованная часть на рис.~6;
+штриховыми линиями обозначены участки границы области $\Omega$, не
+принадлежащие $\Omega$). Поэтому $(C\cap B)\cup(A\cap\ov B)=(C\cup\ov B)\cap A$.
+Рассмотрим двойственную формулу $(C\cup B)\cap(A\cup\ov B)=(C\cap\ov B)\cup A$.
+Нетрудно убедиться в том, что левая часть этой формулы соответствует
+область, приведенная на рис.~7,~\emph{а}, а правой "--- на рис.~7,~\emph{б}.
+Таким образом, в этом случае двойственное равенство не выполняется.
+
+\smallskip
+\noindent\textbf{Пример 2.} Рассмотрим множество
+\[
+M=(A_1\cap\ov A_2\cap\ov A_3)\cup(A_1\cap A_2)\cup
+\bigl[\,\ov{\ov{A_1\cap A_3\cap I}\cap\ov{A_2\cap A_3}}\,\bigr].
+\]
+Применяя формулы $1^\circ$--$19^\circ$ \S\,1, последовательно получаем
+\begin{align*}
+M&\equiv(A_1\cap\ov A_2\cap\ov A_3)\cup(A_1\cap A_2)\cup(A_1\cap A_3\cap I)\cup(A_2\cap A_3)\equiv\\
+&\equiv(A_1\cap\ov A_2\cap\ov A_3)\cup(A_1\cap A_2)\cup(A_1\cap A_3)\cup(A_2\cap A_3)\equiv\\
+&\equiv(A_1\cap\ov A_2\cap\ov A_3)\cup[A_1\cap(A_2\cup A_3)]\cup(A_2\cap A_3)\equiv\\
+&\equiv[A_1\cap(\ov A_2\cap\ov A_3)]\cup[A_1\cap(A_2\cup A_3)]\cup(A_2\cap A_3)\equiv\\
+&\equiv\{A_1\cap[(\ov A_2\cap\ov A_3)\cup(A_2\cup A_3)]\}\cup(A_2\cap A_3)\equiv\\
+&\equiv\{A_1\cap\{[(\ov A_2\cap\ov A_3)\cup A_2]\cup A_3\}\}\cup(A_2\cap A_3)\equiv\\
+&\equiv\{A_1\cap\{[(\ov A_2\cup A_2)\cap(\ov A_3\cup A_2)]\cup A_3\}\}\cup(A_2\cap A_3)\equiv\\
+&\equiv\{A_1\cap\{[I\cap(\ov A_3\cup A_2)]\cup A_3\}\}\cup(A_2\cap A_3)\equiv\\
+&\equiv[A_1\cap(A_2\cup A_3\cup\ov A_3)]\cup(A_2\cap A_3)\equiv\\
+&\equiv[A_1\cap(A_2\cup I)]\cup(A_2\cap A_3)\equiv(A_1\cap I)\cup(A_2\cap A_3)\equiv A_1\cup(A_2\cap A_3).
+\end{align*}
+}
+
+\bookpage{21}\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=0.7]
+ \fill[hat] (-2,0) arc (180:0:2) -- cycle;
+ \fill[hat] (1,0) arc (0:-180:1) -- cycle;
+ \draw (-2,0) arc (180:0:2); \draw (1,0) arc (0:-180:1);
+ \draw[dashed] (2,0) arc (0:-180:2);
+ \draw (-2,0)--(2,0);
+ \draw[->] (-2.6,0) -- (2.8,0) node[below]{$x_1$};
+ \draw[->] (0,-2.4) -- (0,2.5) node[left]{$x_2$};
+ \node[below] at (1.2,0){\small 1}; \node[below] at (2.2,0){\small 2};
+ \node at (0,-2.8){\emph{а}};
+\end{tikzpicture}\qquad\qquad
+\begin{tikzpicture}[scale=0.7]
+ \fill[hat] (0,0) circle (2); \draw (0,0) circle (2);
+ \draw[->] (-2.6,0) -- (2.8,0) node[below]{$x_1$};
+ \draw[->] (0,-2.4) -- (0,2.5) node[left]{$x_2$};
+ \node at (0,-2.8){\emph{б}};
+\end{tikzpicture}
+\figcap{Рис. 7.}
+\end{figure}
+
+{\small\noindent Таким образом, справедливо тождество
+\[
+(A_1\cap\ov A_2\cap\ov A_3)\cup(A_1\cap A_2)\cup
+\bigl[\,\ov{\ov{A_1\cap A_3\cap I}\cap\ov{A_2\cap A_3}}\,\bigr]\equiv A_1\cup(A_2\cap A_3).
+\]
+Следовательно, выполнимо и двойственное тождество
+\[
+(A_1\cup\ov A_2\cup\ov A_3)\cap(A_1\cup A_2)\cap
+\bigl[\,\ov{\ov{A_1\cup A_3\cup\emptyset}\cup\ov{A_2\cup A_3}}\,\bigr]\equiv A_1\cap(A_2\cup A_3).
+\]\par}
+
+\subsection*{Упражнения и задачи}
+1. Существует ли самодвойственная двухместная операция $F(A,B)$, не равная
+тождественно $A$ или $B$?
+
+2. Описать множество всех самодвойственных формул вида $F(A_1,\dots,A_n)$
+при любом $n\ge2$.
+
+3. Описать множество всех логических формул, для которых
+$F\cap F^*=\emptyset$. Будет ли при этом $F\cup F^*=I$?
+
+4.\fixed{в оригинале номер упражнения <<4.>> пропущен.} Будем
+предполагать, что $F(A_1,\dots,A_n)$ "--- \emph{строго $n$-местная}
+логическая операция, если не существует таких целых чисел
+$k_1,\dots,k_s\in[1,n]$ ($s<n$), что
+$F(A_1,\dots,A_n)=\Phi(A_{k_1},\dots,A_{k_s})$, где $\Phi$ "--- $s$-местная
+логическая формула. Для каких $n$ существуют строго $n$-местные
+самодвойственные логические формулы? Простой перебор показывает, что для
+$n=2$ таких формул нет. Для $n=3$ примером самодвойственной строго
+трехместной формулы является (1.6).
+
+5. Пусть $\mu(n)$ "--- количество самодвойственных $n$-местных логических
+формул. Показать, что $\mu(n)$ "--- неубывающая функция.
+\bookpage{22}%
+
+6. Пусть $\tau(n)$ "--- количество самодвойственных строго $n$-местных
+логических формул. Показать, что $\tau(2)=0$. Для каких еще $n$
+$\tau(n)=0$?
+
+7. Пусть $\lambda\{F(A_1,\dots,A_n)\}=\lambda(F)$ "--- количество
+конституентных областей в диаграмме Эйлера для логической формулы
+$F(A_1,\dots,A_n)$, а $\lambda(F^*)$ "--- количество таких же областей для
+двойственной формулы. Описать класс функций, для которых
+$\lambda(F)=\lambda(F^*)$.
+
+\input{ch1-s3-solutions}

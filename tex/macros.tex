@@ -1,0 +1,29 @@
+% --- обозначения ---
+\newcommand{\ov}[1]{\overline{#1}}
+\renewcommand{\emptyset}{\varnothing}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\M}{\mathfrak M}
+\newcommand{\maj}{\operatorname{maj}}
+\newcommand{\sd}{\mathbin{\triangle}}
+\newcommand{\cupl}{\mathbin{\cup}}
+% номер страницы оригинала на полях
+\newcommand{\bookpage}[1]{\leavevmode\marginnote{\footnotesize\textcolor{gray}{[с.~#1]}}\ignorespaces}
+% подпись к рисункам в стиле книги
+\newcommand{\figcap}[1]{\par\smallskip\centering\small #1\par}
+% --- добавленный материал ---
+\definecolor{solcol}{RGB}{20,80,150}
+\newtcolorbox{solution}[1][]{breakable,enhanced,colback=solcol!4,colframe=solcol!60,
+  boxrule=0.5pt,arc=1pt,left=6pt,right=6pt,top=4pt,bottom=4pt,
+  title={Решение упражнения #1},fonttitle=\bfseries\small,coltitle=white,colbacktitle=solcol!75}
+\newtcolorbox{remarkbox}[1][]{breakable,enhanced,colback=orange!5,colframe=orange!60!black,
+  boxrule=0.4pt,arc=1pt,title={#1},fonttitle=\bfseries\small}
+% исправление опечатки: отметка в тексте
+\newcommand{\fixed}[1]{\footnote{\textit{Исправлено:} #1}}
+\theoremstyle{plain}
+\newtheorem*{lemma*}{Лемма}
+\newtheorem*{theorem*}{Теорема}
+\newtheorem*{prop*}{Утверждение}
+\newcommand{\exitem}[1]{\par\smallskip\noindent\textbf{#1}~}

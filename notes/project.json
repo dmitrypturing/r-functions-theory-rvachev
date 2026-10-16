@@ -1,0 +1,20 @@
+{
+  "uuid": "01a0a4ea-a5b9-7364-9c72-2fbd4c6d3aab",
+  "name": "Rvacher R-functions theory book",
+  "description": "I want to understand the theory described in the book",
+  "created_at": "2026-09-15T11:53:56.412382+00:00",
+  "updated_at": "2026-10-07T12:18:43.156641+00:00",
+  "creator": "Dmitry Popov",
+  "docs": [
+    {"filename": "claude/p21-selfdual-formulas.md",                "created_at": "2026-09-15T13:06:00.278294+00:00"},
+    {"filename": "claude/p21-task3-F-cap-Fstar.md",                "created_at": "2026-09-16T11:00:57.433243+00:00"},
+    {"filename": "claude/sweep-integral-form-derivation-en.md",    "created_at": "2026-09-16T12:53:28.602240+00:00"},
+    {"filename": "claude/sweep-integral-form.md",                  "created_at": "2026-09-16T12:53:33.366535+00:00"},
+    {"filename": "claude/sweep-paper-prior-art-search.md",         "created_at": "2026-09-17T07:01:10.281646+00:00"},
+    {"filename": "claude/p21-task4-strictly-n-place.md",           "created_at": "2026-10-02T07:18:44.136664+00:00"},
+    {"filename": "claude/p21-task5-mu-monotone.md",                "created_at": "2026-10-02T07:38:31.940689+00:00"},
+    {"filename": "claude/p21-task6-tau.md",                        "created_at": "2026-10-02T07:39:10.345338+00:00"},
+    {"filename": "claude/p21-task7-lambda.md",                     "created_at": "2026-10-02T07:39:45.251913+00:00"}
+  ],
+  "note": "Document bodies are stored as the files listed above (notes/claude/*.md)."
+}

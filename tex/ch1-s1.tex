@@ -1,0 +1,336 @@
+\section{Множества и логические операции над ними}
+
+Логические операции над множествами в настоящее время применяются не только
+в математике, но и в многочисленных ее приложениях. В данной работе им
+отводится особая роль: формализация, достигаемая на уровне алгебры
+множеств, будет представлять собой существенное звено в конструктивных
+построениях, осуществляемых с помощью $R$-функций (в частности, при
+построении уравнений сложных геометрических объектов и структур решений
+краевых задач). Заметим, что в ряде случаев наряду с термином
+<<множество>> используются его синонимы <<совокупность>>,
+<<многообразие>>, <<система>> и~др.
+
+Примем следующие обозначения:
+
+\begin{itemize}[nosep,label={},leftmargin=1em]
+\item $\N$ "--- множество неотрицательных целых чисел;
+\item $\Z$ "--- множество произвольных целых чисел;
+\item $\Q$ "--- множество рациональных чисел;
+\item $\R$ "--- множество действительных чисел;
+\item $C^m(\Omega)$ "--- множество $m$ раз непрерывно дифференцируемых функций;
+\item $\emptyset$ "--- пустое множество;
+\item $2^A$ "--- множество всех подмножеств множества $A$;
+\item $f(A)$ "--- образ множества $A$ при отображении $f$;
+\item $f^{-1}(A)$ "--- прообраз множества $A$ при отображении $f$;\fixed{в оригинале <<при отображении $|$>>.}
+\item $f/A$ "--- сужение (ограничение) отображения $f$ на множество $A$
+  (т.\,е. $f/A$ есть отображение, совпадающее с $f$ на множестве $A$. Вне
+  множества $A$ отображение $f/A$, вообще, не определено);
+\item $\inf A$ ($\sup A$) "--- нижняя (верхняя) грань множества $A\subset\R$;
+\item $a\in A$ (или $A\ni a$) "--- элемент $a$ принадлежит множеству $A$
+  ($a$ находится в состоянии принадлежности к $A$);
+\item $a\notin A$ (или $A\not\ni a$) "--- элемент $a$ не принадлежит
+  множеству $A$ ($a$ находится в состоянии непринадлежности к $A$);
+\item $A\subset B$ (или $B\supset A$) "--- множество $A$ является
+  подмножеством множества $B$;
+\item $A\equiv B$ "--- множества $A$ и $B$ тождественны, т.\,е.
+  $A\supset B$ и $A\subset B$;
+\item $\exists a\in A\dots$ "--- существует (по крайней мере один) элемент
+  $a$ множества $A$, что \dots\ ($\exists$ "--- квантор существования);
+\bookpage{14}%
+\item $\forall a\in A\dots$ "--- для всякого элемента $a$ множества
+  $A$\dots\ ($\forall$ "--- квантор общности);
+\item $A_1\times\dots\times A_n$ "--- прямое произведение множеств
+  $A_1,\dots,A_n$ есть множество упорядоченных строк $a_1,\dots,a_n$, где
+  $a_i\in A_i$. В частности, если $A_1=\dots=A_n$, то
+  $A\times\dots\times A=A^n$ называется $n$-й степенью множества $A$.
+  Например, $n$-мерное евклидово пространство $\R^n$ есть $n$-я степень
+  множества~$\R$.
+\end{itemize}
+
+Перейдем к логическим операциям над множествами. Операцию $F$ над
+множествами $A,B,\dots$ будем называть логической, если в результате ее
+применения получается множество, принадлежность элементов к которому
+вполне определяется их состояниями принадлежности или непринадлежности
+к множествам $A,B,\dots$ Примеры логических операций следующие:
+
+1. $A\cap B$ (или $AB$) "--- \emph{пересечение} множеств $A$ и $B$ "--- есть
+множество, состоящее из всех элементов, принадлежащих как множеству $A$,
+так и множеству $B$.
+
+2. $A\cup B$ (или $A+B$) "--- \emph{соединение} (сумма) множеств $A$ и $B$
+"--- есть множество, состоящее из всех элементов, принадлежащих хотя бы
+одному из множеств $A$ или $B$.
+
+3. $A\setminus B$ (или $A-B$) "--- \emph{разность} множеств $A$ и $B$ "---
+есть совокупность тех элементов $A$, которые не принадлежат $B$:
+\begin{equation}\tag{1.1}
+A\setminus B=A\cap\ov B.
+\end{equation}
+
+4. $A\sd B$ "--- \emph{симметрическая разность} "--- есть соединение
+разностей $A\setminus B$ и $B\setminus A$, т.\,е.
+\begin{equation}\tag{1.2}
+A\sd B=(A\cap\ov B)\cup(B\cap\ov A).
+\end{equation}
+
+Часто приходится рассматривать системы множеств, являющиеся подмножествами
+некоторого основного (так называемого унитарного) множества $I$. Для них
+вводится понятие дополнения (или отрицания).
+
+5. Множество $\ov A=I\setminus A$ называется дополнением (отрицанием)
+множества $A$. (Иногда употребляются обозначения $\ov A=A'={\sim}A$ и~др.)
+
+6. Тождество $F(A,B,\dots)\equiv\Phi(A,B,\dots)$, где $F$ и $\Phi$ "---
+некоторые формулы, построенные с помощью тех или иных логических операций
+над множествами $A,B,\dots$, означает равенство множеств $F(A,B,\dots)$
+и $\Phi(A,B,\dots)$ при любом выборе множеств $A,B,\dots$
+
+Нетрудно убедиться, что операции пересечения, соединения и дополнения
+обладают следующими свойствами, выраженными в виде тождеств.
+
+I. Коммутативность:
+\[
+1^\circ)\ A\cap B\equiv B\cap A;\qquad 2^\circ)\ A\cup B\equiv B\cup A.
+\]
+II. Ассоциативность:
+\[
+\begin{aligned}
+&3^\circ)\ A\cap(B\cap C)\equiv(A\cap B)\cap C,\\
+&4^\circ)\ A\cup(B\cup C)\equiv(A\cup B)\cup C.
+\end{aligned}
+\]
+\bookpage{15}%
+III. Дистрибутивность:
+\[
+\begin{aligned}
+&5^\circ)\ A\cap(B\cup C)\equiv(A\cap B)\cup(A\cap C);\\
+&6^\circ)\ A\cup(B\cap C)\equiv(A\cup B)\cap(A\cup C).
+\end{aligned}
+\]
+IV. Идемпотентность:
+\[
+7^\circ)\ A\cap A\equiv A;\qquad 8^\circ)\ A\cup A\equiv A.
+\]
+V. Закон двойного отрицания:
+\[
+9^\circ)\ \ov{(\ov A)}\equiv\ov{\ov A}\equiv A.
+\]
+VI. Правила де Моргана:
+\[
+10^\circ)\ \ov{A\cap B}\equiv\ov A\cup\ov B;\qquad
+11^\circ)\ \ov{A\cup B}\equiv\ov A\cap\ov B.
+\]
+VII. Закон логического противоречия:
+\[
+12^\circ)\ A\cap\ov A\equiv\emptyset.
+\]
+VIII. Закон исключенного третьего:
+\[
+13^\circ)\ A\cup\ov A\equiv I.
+\]
+IX. Операции с унитарным множеством $I$ и пустым множеством $\emptyset$:
+\[
+\begin{array}{ll}
+14^\circ)\ I\cap A\equiv A; & 17^\circ)\ \emptyset\cup A\equiv A;\\
+15^\circ)\ I\cup A\equiv I; & 18^\circ)\ \ov\emptyset\equiv I;\\
+16^\circ)\ \emptyset\cap A\equiv\emptyset; & 19^\circ)\ \ov I\equiv\emptyset.
+\end{array}
+\]
+Приведенные формулы позволяют осуществлять тождественные преобразования
+формул, записанных в символах операций $A\cap B$, $A\cup B$, $\ov A$,
+например, с целью их упрощения.
+
+{\small\noindent\textbf{Пример.}
+\[
+(A\cap\ov B\cap C)\cup(A\cap C)\equiv(A\cap C\cap\ov B)\cup(A\cap C\cap I)
+\equiv(A\cap C)\cap(\ov B\cup I)\equiv(A\cap C)\cap I\equiv A\cap C.
+\]
+(Здесь использованы свойства $1^\circ$, $3^\circ$, $5^\circ$, $14^\circ$,
+$15^\circ$.)\fixed{в оригинале в левой части стоит
+$(A\cap\ov B\cap C)\cap(A\cap C)$; по ходу преобразований (вынесение
+$A\cap C$ по закону $5^\circ$) первым знаком должен быть $\cup$.}\par}
+
+Логическая терминология, использованная для наименования некоторых из
+приведенных выше формул, имеет свои корни в метаматематике~[84],
+в частности в исчислении высказываний или булевой алгебре. О последней
+речь будет идти подробнее в \S\S\,6--8 данной главы.
+
+Справедливость свойств $1^\circ$--$19^\circ$ легко проверяется. Убедимся,
+например, в справедливости формулы $5^\circ$. Пусть
+$x\in A\cap(B\cup C)$, т.\,е. $x$ "--- элемент множества, стоящего в левой
+части формулы $5^\circ$. Это означает, что $x$ принадлежит одновременно как
+множеству $A$, так и множеству $B\cup C$. Но тогда $x\in B$ или $x\in C$.
+Следовательно, $x$ принадлежит по крайней мере одному из множеств
+$A\cap B$ или $A\cap C$. Тогда $x\in(A\cap B)\cup(A\cap C)$ и, таким
+образом, $A\cap(B\cup C)\subset(A\cap B)\cup(A\cap C)$. Наоборот, если
+$x\in(A\cap B)\cup(A\cap C)$, то $x\in A\cap B$ или $x\in A\cap C$.
+Следо\-%
+\bookpage{16}%
+вательно, $x\in A$ и по крайней мере одному из множеств $B$ или $C$. Но
+тогда $x\in B\cup C$, а значит, и $x\in A\cap(B\cup C)$. Таким образом,
+$(A\cap B)\cup(A\cap C)\subset A\cap(B\cup C)$. Сравнивая эту формулу
+с полученной ранее формулой $A\cap(B\cup C)\subset(A\cap B)\cup(A\cap C)$,
+приходим к формуле~$5^\circ$.
+
+Благодаря тому что операции $A\cap B$ и $A\cup B$ ассоциативны, при
+многократном их применении можно опускать скобки, например
+$((A\cap B)\cap C)\cap D\equiv A\cap B\cap C\cap D$. Применяется также
+сокращенная запись:
+\begin{equation}\tag{1.3}
+A_1\cap\dots\cap A_n\equiv\bigcap_{i=1}^{i=n}A_i;\qquad
+A_1\cup\dots\cup A_n\equiv\bigcup_{i=1}^{i=n}A_i.
+\end{equation}
+
+\subsection*{Упражнения и задачи}
+\label{ex:s1}
+1. Доказать тождества
+\begin{equation}\tag{1.4}
+\begin{gathered}
+A\sd B\equiv(A\cup B)\setminus(A\cap B);\\
+A\cup B\equiv(A\sd B)\sd(A\cap B);\qquad A\setminus B\equiv A\sd(A\cap B);\\
+(A\cap B)\cup B\equiv B;\qquad (A\cup B)\cap B\equiv B;\\
+(A\cap B)\cup(A\cap\ov B)\equiv A;\qquad (A\cup B)\cap(A\cup\ov B)\equiv A;\\
+(\ov A\cap B)\cup(A\cap\ov B)\equiv(A\cup B)\cap(\ov A\cup\ov B).
+\end{gathered}
+\end{equation}
+(Для доказательства использовать формулы (1.1), (1.2) и свойства
+$1^\circ$--$19^\circ$.)
+
+2. Показать, что симметрическая разность "--- это коммутативная
+и ассоциативная операции.
+
+\textsc{Решение.} В соответствии с формулой (1.2) и свойствами
+$1^\circ$--$19^\circ$ получаем
+\begin{align*}
+A\sd(B\sd C)&\equiv[A\cap(\ov{B\sd C})]\cup[\ov A\cap(B\sd C)]\equiv\\
+&\equiv\{A\cap\ov{[(B\cap\ov C)\cup(\ov B\cap C)]}\}\cup\{\ov A\cap[(B\cap\ov C)\cup(\ov B\cap C)]\}\equiv\\
+&\equiv\{A\cap[\ov{(B\cap\ov C)}\cap\ov{(\ov B\cap C)}]\}\cup\{\ov A\cap[(B\cap\ov C)\cup(\ov B\cap C)]\}\equiv\\
+&\equiv\{A\cap[(\ov B\cup C)\cap(B\cup\ov C)]\}\cup\{(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\}\equiv\\
+&\equiv\{[A\cap(\ov B\cup C)]\cap[A\cap(B\cup\ov C)]\}\cup(\ov A\cap B\cap\ov C)\cup{}\\
+&\qquad\cup(\ov A\cap\ov B\cap C)\equiv\{[(A\cap\ov B)\cup(A\cap C)]\cap[(A\cap B)\cup(A\cap\ov C)]\}\cup{}\\
+&\qquad\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\\
+&\equiv\{[(A\cap\ov B)\cap(A\cap B)]\cup[(A\cap\ov B)\cap(A\cap\ov C)]\cup[(A\cap C)\cap(A\cap B)]\cup{}\\
+&\qquad\cup[(A\cap C)\cap(A\cap\ov C)]\}\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\\
+&\equiv\{[(A\cap A)\cap(B\cap\ov B)]\cup[(A\cap A)\cap(\ov B\cap\ov C)]\cup[(A\cap A)\cap(C\cap B)]\cup{}\\
+&\qquad\cup[(A\cap A)\cap(C\cap\ov C)]\}\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\\
+&\equiv(A\cap\emptyset)\cup(A\cap\ov B\cap\ov C)\cup(A\cap B\cap C)\cup(A\cap\emptyset)\cup{}\\
+&\qquad\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\emptyset\cup(A\cap\ov B\cap\ov C)\cup{}\\
+&\qquad\cup(A\cap B\cap C)\cup\emptyset\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\\
+&\equiv(A\cap\ov B\cap\ov C)\cup(A\cap B\cap C)\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C).
+\end{align*}
+\bookpage{17}Поскольку последнее выражение инвариантно относительно циклической
+перестановки букв (т.\,е. при замене $A$, $B$, $C$ на $C$, $A$, $B$
+соответственно), то оно равно также $C\sd(A\sd B)$. Таким образом,
+ассоциативность операции $A\sd B$ доказана. Ее коммутативность
+очевидна.\fixed{в оригинале в восьмой строке выкладки стоит скобка
+<<$([A\cap A)$>> вместо <<$[(A\cap A)$>>.}
+
+3. Пусть $I=\R$. Показать, что равенство
+$(A\cap B)\cup C=C\cup(B\cap C)$ справедливо, если $A=[a,b]$, $B=[c,d]$,
+$C=[e,f]$ и $e\le\max(a,c)$; $f\ge\min(b,d)$, но оно не является
+тождеством.
+
+4. Показать, что правила де Моргана $10^\circ$ и $11^\circ$ верны для
+$n$ ($n\ge2$) компонент, т.\,е.
+\begin{equation}\tag{1.5}
+\ov{\bigcap_{i=1}^{i=n}A_i}\equiv\bigcup_{i=1}^{i=n}\ov{A_i};\qquad
+\ov{\bigcup_{i=1}^{i=n}A_i}\equiv\bigcap_{i=1}^{i=n}\ov{A_i}.
+\end{equation}
+
+%======================================================================
+\begin{solution}[1 (\S\,1)]
+Будем пользоваться только (1.1), (1.2) и свойствами $1^\circ$--$19^\circ$.
+Полезно заранее заметить два следствия.
+
+(а) \emph{Поглощение:} $(A\cap B)\cup B\equiv B$ и $(A\cup B)\cap B\equiv B$.
+Действительно,
+$(A\cap B)\cup B\overset{14^\circ}{\equiv}(A\cap B)\cup(I\cap B)
+\overset{5^\circ}{\equiv}(A\cup I)\cap B\overset{15^\circ}{\equiv}I\cap B\equiv B$;
+второе тождество двойственно первому (те же шаги с $6^\circ$, $17^\circ$,
+$16^\circ$):
+$(A\cup B)\cap B\equiv(A\cup B)\cap(\emptyset\cup B)\equiv(A\cap\emptyset)\cup B\equiv\emptyset\cup B\equiv B$.
+Это четвертое и пятое тождества (1.4).
+
+(б) \emph{Склеивание:}
+$(A\cap B)\cup(A\cap\ov B)\overset{5^\circ}{\equiv}A\cap(B\cup\ov B)
+\overset{13^\circ}{\equiv}A\cap I\equiv A$;
+$(A\cup B)\cap(A\cup\ov B)\overset{6^\circ}{\equiv}A\cup(B\cap\ov B)
+\overset{12^\circ}{\equiv}A\cup\emptyset\equiv A$. Это шестое и седьмое тождества.
+
+\smallskip
+\emph{Последнее тождество.} Раскроем скобки в правой части по $5^\circ$:
+\[
+(A\cup B)\cap(\ov A\cup\ov B)\equiv(A\cap\ov A)\cup(A\cap\ov B)\cup(B\cap\ov A)\cup(B\cap\ov B)
+\equiv(A\cap\ov B)\cup(\ov A\cap B),
+\]
+так как $A\cap\ov A\equiv B\cap\ov B\equiv\emptyset$. Попутно получена
+полезная формула $A\sd B\equiv(A\cup B)\cap(\ov A\cup\ov B)$.
+
+\emph{Первое тождество.} По (1.1) и $10^\circ$:
+$(A\cup B)\setminus(A\cap B)\equiv(A\cup B)\cap\ov{A\cap B}\equiv(A\cup B)\cap(\ov A\cup\ov B)$,
+а это, как только что показано, $A\sd B$.
+
+\emph{Третье тождество.} По (1.2), $10^\circ$ и $9^\circ$:
+\begin{multline*}
+A\sd(A\cap B)\equiv\bigl(A\cap\ov{A\cap B}\bigr)\cup\bigl(\ov A\cap A\cap B\bigr)
+\equiv\bigl(A\cap(\ov A\cup\ov B)\bigr)\cup\emptyset\equiv{}\\
+\equiv(A\cap\ov A)\cup(A\cap\ov B)\equiv A\cap\ov B\equiv A\setminus B.
+\end{multline*}
+
+\emph{Второе тождество.} Обозначим $D=A\sd B=(A\cap\ov B)\cup(\ov A\cap B)$,
+$P=A\cap B$. Заметим, что $D\cap P\equiv\emptyset$ (каждый член $D$
+содержит $\ov A$ или $\ov B$). Тогда $D\cap\ov P\equiv D$ (так как
+$D\equiv(D\cap P)\cup(D\cap\ov P)$ по склеиванию) и аналогично
+$P\cap\ov D\equiv P$. Поэтому
+\[
+(A\sd B)\sd(A\cap B)\equiv(D\cap\ov P)\cup(\ov D\cap P)\equiv D\cup P
+\equiv(A\cap\ov B)\cup(\ov A\cap B)\cup(A\cap B).
+\]
+Склеивая $(A\cap\ov B)\cup(A\cap B)\equiv A$ и $(\ov A\cap B)\cup(A\cap B)\equiv B$
+(член $A\cap B$ можно повторить по $8^\circ$), получаем $A\cup B$.
+\end{solution}
+
+\begin{solution}[2 (\S\,1): дополнение]
+Решение в книге приводит $A\sd(B\sd C)$ к виду
+$K_{100}\cup K_{111}\cup K_{010}\cup K_{001}$, где
+$K_{\alpha\beta\gamma}=A^\alpha\cap B^\beta\cap C^\gamma$ ($X^1=X$,
+$X^0=\ov X$). Это ровно те <<кусочки>> диаграммы Эйлера, в которых точка
+принадлежит \emph{нечетному} числу множеств. Отсюда сразу видна и
+коммутативность, и ассоциативность: для любых $A_1,\dots,A_n$ множество
+$A_1\sd\dots\sd A_n$ (при любой расстановке скобок) "--- это множество
+точек, принадлежащих нечетному числу из $A_i$. (Индукция: $x\in X\sd Y$
+$\iff$ $x$ лежит ровно в одном из $X$, $Y$, т.\,е. число вхождений в $X\sd Y$
+имеет ту же четность, что сумма чисел вхождений.) Коммутативность $A\sd B\equiv B\sd A$
+следует из (1.2) и $1^\circ$, $2^\circ$.
+\end{solution}
+
+\begin{solution}[3 (\S\,1)]
+По поглощению $C\cup(B\cap C)\equiv C$, поэтому равенство
+$(A\cap B)\cup C=C\cup(B\cap C)$ равносильно $(A\cap B)\cup C=C$, т.\,е.
+\[
+A\cap B\subset C .
+\]
+Для отрезков $A\cap B=[\max(a,c),\ \min(b,d)]$ (пусто, если
+$\max(a,c)>\min(b,d)$). Если $e\le\max(a,c)$ и $f\ge\min(b,d)$, то
+$[\max(a,c),\min(b,d)]\subset[e,f]$, и равенство выполнено (если же
+$A\cap B=\emptyset$, оно тем более верно).
+
+Тождеством равенство не является: при $A=B=[0,1]$, $C=[2,3]$ слева
+$[0,1]\cup[2,3]$, справа $[2,3]$. Вообще, равенство верно в точности при
+$A\cap B\subset C$; условия задачи "--- достаточные (а при
+$A\cap B\neq\emptyset$ и необходимые).
+\end{solution}
+
+\begin{solution}[4 (\S\,1)]
+Индукция по $n$. При $n=2$ это $10^\circ$, $11^\circ$. Пусть (1.5) верно
+для $n$. Тогда по ассоциативности, $10^\circ$ и предположению индукции
+\[
+\ov{\bigcap_{i=1}^{n+1}A_i}\equiv\ov{\Bigl(\bigcap_{i=1}^{n}A_i\Bigr)\cap A_{n+1}}
+\equiv\ov{\bigcap_{i=1}^{n}A_i}\cup\ov{A_{n+1}}
+\equiv\Bigl(\bigcup_{i=1}^{n}\ov{A_i}\Bigr)\cup\ov{A_{n+1}}\equiv\bigcup_{i=1}^{n+1}\ov{A_i}.
+\]
+Второе тождество получается так же из $11^\circ$ (или из первого,
+примененного к $\ov{A_i}$, с последующим взятием дополнения и законом
+$9^\circ$). Можно рассуждать и непосредственно: $x\notin\bigcap A_i$
+$\iff$ $x\notin A_i$ хотя бы для одного $i$ $\iff$ $x\in\bigcup\ov{A_i}$.
+\end{solution}
