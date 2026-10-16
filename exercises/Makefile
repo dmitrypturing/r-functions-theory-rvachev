@@ -1,8 +1,10 @@
-# make: собрать решения упражнений; результат копируется в ../rvachev-exercises.pdf
-main.pdf: *.tex ../theory/macros.tex
+# make: собрать решения упражнений -> ../rvachev-exercises.pdf
+PDF = ../rvachev-exercises.pdf
+
+$(PDF): *.tex ../theory/macros.tex
 	pdflatex -interaction=nonstopmode -halt-on-error main.tex
 	pdflatex -interaction=nonstopmode -halt-on-error main.tex
-	cp main.pdf ../rvachev-exercises.pdf
+	cp main.pdf $(PDF)
 
 clean:
 	rm -f *.aux *.log *.out *.toc main.pdf

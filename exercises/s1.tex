@@ -20,23 +20,23 @@ $1^\circ$--$19^\circ$.)
 
 \textsc{Решение.} В соответствии с формулой (1.2) и свойствами
 $1^\circ$--$19^\circ$ получаем
-\begin{align*}
-A\sd(B\sd C)&\equiv[A\cap(\ov{B\sd C})]\cup[\ov A\cap(B\sd C)]\equiv\\
-&\equiv\{A\cap\ov{[(B\cap\ov C)\cup(\ov B\cap C)]}\}\cup\{\ov A\cap[(B\cap\ov C)\cup(\ov B\cap C)]\}\equiv\\
-&\equiv\{A\cap[\ov{(B\cap\ov C)}\cap\ov{(\ov B\cap C)}]\}\cup\{\ov A\cap[(B\cap\ov C)\cup(\ov B\cap C)]\}\equiv\\
-&\equiv\{A\cap[(\ov B\cup C)\cap(B\cup\ov C)]\}\cup\{(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\}\equiv\\
-&\equiv\{[A\cap(\ov B\cup C)]\cap[A\cap(B\cup\ov C)]\}\cup(\ov A\cap B\cap\ov C)\cup{}\\
-&\qquad\cup(\ov A\cap\ov B\cap C)\equiv\{[(A\cap\ov B)\cup(A\cap C)]\cap[(A\cap B)\cup(A\cap\ov C)]\}\cup{}\\
-&\qquad\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\\
-&\equiv\{[(A\cap\ov B)\cap(A\cap B)]\cup[(A\cap\ov B)\cap(A\cap\ov C)]\cup[(A\cap C)\cap(A\cap B)]\cup{}\\
-&\qquad\cup[(A\cap C)\cap(A\cap\ov C)]\}\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\\
-&\equiv\{[(A\cap A)\cap(B\cap\ov B)]\cup[(A\cap A)\cap(\ov B\cap\ov C)]\cup[(A\cap A)\cap(C\cap B)]\cup{}\\
-&\qquad\cup[(A\cap A)\cap(C\cap\ov C)]\}\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\\
-&\equiv(A\cap\emptyset)\cup(A\cap\ov B\cap\ov C)\cup(A\cap B\cap C)\cup(A\cap\emptyset)\cup{}\\
-&\qquad\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\emptyset\cup(A\cap\ov B\cap\ov C)\cup{}\\
-&\qquad\cup(A\cap B\cap C)\cup\emptyset\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\\
-&\equiv(A\cap\ov B\cap\ov C)\cup(A\cap B\cap C)\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C).
-\end{align*}
+\begin{gather*}
+A\sd(B\sd C)\equiv[A\cap(\ov{B\sd C})]\cup[\ov A\cap(B\sd C)]\equiv\\
+\equiv\{A\cap\ov{[(B\cap\ov C)\cup(\ov B\cap C)]}\}\cup\{\ov A\cap[(B\cap\ov C)\cup(\ov B\cap C)]\}\equiv\\
+\equiv\{A\cap[\ov{(B\cap\ov C)}\cap\ov{(\ov B\cap C)}]\}\cup\{\ov A\cap[(B\cap\ov C)\cup(\ov B\cap C)]\}\equiv\\
+\equiv\{A\cap[(\ov B\cup C)\cap(B\cup\ov C)]\}\cup\{(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\}\equiv\\
+\equiv\{[A\cap(\ov B\cup C)]\cap[A\cap(B\cup\ov C)]\}\cup(\ov A\cap B\cap\ov C)\cup{}\\
+{}\cup(\ov A\cap\ov B\cap C)\equiv\{[(A\cap\ov B)\cup(A\cap C)]\cap[(A\cap B)\cup(A\cap\ov C)]\}\cup{}\\
+{}\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\{[(A\cap\ov B)\cap(A\cap B)]\cup{}\\
+{}\cup[(A\cap\ov B)\cap(A\cap\ov C)]\cup[(A\cap C)\cap(A\cap B)]\cup[(A\cap C)\cap{}\\
+{}\cap(A\cap\ov C)]\}\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\\
+\equiv\{[(A\cap A)\cap(B\cap\ov B)]\cup[(A\cap A)\cap(\ov B\cap\ov C)]\cup[(A\cap A)\cap{}\\
+{}\cap(C\cap B)]\cup[(A\cap A)\cap(C\cap\ov C)]\}\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\\
+\equiv(A\cap\emptyset)\cup(A\cap\ov B\cap\ov C)\cup(A\cap B\cap C)\cup(A\cap\emptyset)\cup{}\\
+{}\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\emptyset\cup(A\cap\ov B\cap\ov C)\cup{}\\
+{}\cup(A\cap B\cap C)\cup\emptyset\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\\
+\equiv(A\cap\ov B\cap\ov C)\cup(A\cap B\cap C)\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C).
+\end{gather*}
 Поскольку последнее выражение инвариантно относительно циклической
 перестановки букв (т.\,е. при замене $A$, $B$, $C$ на $C$, $A$, $B$
 соответственно), то оно равно также $C\sd(A\sd B)$. Таким образом,
@@ -101,10 +101,10 @@ $P=A\cap B$. Заметим, что $D\cap P\equiv\emptyset$ (каждый чл�
 содержит $\ov A$ или $\ov B$). Тогда $D\cap\ov P\equiv D$ (так как
 $D\equiv(D\cap P)\cup(D\cap\ov P)$ по склеиванию) и аналогично
 $P\cap\ov D\equiv P$. Поэтому
-\[
-(A\sd B)\sd(A\cap B)\equiv(D\cap\ov P)\cup(\ov D\cap P)\equiv D\cup P
+\begin{multline*}
+(A\sd B)\sd(A\cap B)\equiv(D\cap\ov P)\cup(\ov D\cap P)\equiv D\cup P\equiv{}\\
 \equiv(A\cap\ov B)\cup(\ov A\cap B)\cup(A\cap B).
-\]
+\end{multline*}
 Склеивая $(A\cap\ov B)\cup(A\cap B)\equiv A$ и $(\ov A\cap B)\cup(A\cap B)\equiv B$
 (член $A\cap B$ можно повторить по $8^\circ$), получаем $A\cup B$.
 \end{solution}
@@ -143,11 +143,11 @@ $A\cap B\neq\emptyset$ и необходимые).
 \begin{solution}[4 (\S\,1)]
 Индукция по $n$. При $n=2$ это $10^\circ$, $11^\circ$. Пусть (1.5) верно
 для $n$. Тогда по ассоциативности, $10^\circ$ и предположению индукции
-\[
-\ov{\bigcap_{i=1}^{n+1}A_i}\equiv\ov{\Bigl(\bigcap_{i=1}^{n}A_i\Bigr)\cap A_{n+1}}
-\equiv\ov{\bigcap_{i=1}^{n}A_i}\cup\ov{A_{n+1}}
-\equiv\Bigl(\bigcup_{i=1}^{n}\ov{A_i}\Bigr)\cup\ov{A_{n+1}}\equiv\bigcup_{i=1}^{n+1}\ov{A_i}.
-\]
+\begin{align*}
+\ov{\bigcap_{i=1}^{n+1}A_i}&\equiv\ov{\Bigl(\bigcap_{i=1}^{n}A_i\Bigr)\cap A_{n+1}}
+\equiv\ov{\bigcap_{i=1}^{n}A_i}\cup\ov{A_{n+1}}\equiv\\
+&\equiv\Bigl(\bigcup_{i=1}^{n}\ov{A_i}\Bigr)\cup\ov{A_{n+1}}\equiv\bigcup_{i=1}^{n+1}\ov{A_i}.
+\end{align*}
 Второе тождество получается так же из $11^\circ$ (или из первого,
 примененного к $\ov{A_i}$, с последующим взятием дополнения и законом
 $9^\circ$). Можно рассуждать и непосредственно: $x\notin\bigcap A_i$

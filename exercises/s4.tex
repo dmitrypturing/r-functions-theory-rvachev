@@ -32,9 +32,10 @@ $H_i\subset A_i$ "--- соответствующие им полные сист�
 операцию, если $\varphi(x_1,\varphi(x_2,x_3))\equiv\varphi(\varphi(x_1,x_2),x_3)$.
 Аналогично функция $\psi(x_1,x_2,x_3)$ определяет ассоциативную
 трехместную операцию, если
-\[
-\psi(\psi(x_1,x_2,x_3),x_4,x_5)\equiv\psi(x_1,\psi(x_2,x_3,x_4),x_5)\equiv\psi(x_1,x_2,\psi(x_3,x_4,x_5)).
-\]
+\begin{multline*}
+\psi(\psi(x_1,x_2,x_3),x_4,x_5)\equiv\psi(x_1,\psi(x_2,x_3,x_4),x_5)\equiv{}\\
+\equiv\psi(x_1,x_2,\psi(x_3,x_4,x_5)).
+\end{multline*}
 Привести пример трехместной ассоциативной операции, не прибегая
 к конструкции $\psi(x_1,x_2,x_3)\equiv\varphi(x_1,\varphi(x_2,x_3))$, где
 $\varphi(x_1,x_2)$ "--- двухместная ассоциативная операция. Обобщить эти
@@ -52,14 +53,12 @@ $h(x)*h(y)$ лежало в области значений $h$; будем сч
 $h(\R)$ замкнуто относительно $*$ (например, $h$ "--- биекция $\R\to\R$).
 Строгая монотонность обеспечивает существование $h^{-1}$ на $h(\R)$
 и тождество $h(h^{-1}(u))=u$. Тогда
-\[
-\varphi(\varphi(x,y),z)=h^{-1}\bigl[h\bigl(h^{-1}[h(x)*h(y)]\bigr)*h(z)\bigr]
-=h^{-1}\bigl[(h(x)*h(y))*h(z)\bigr],
-\]
-\[
-\varphi(x,\varphi(y,z))=h^{-1}\bigl[h(x)*h\bigl(h^{-1}[h(y)*h(z)]\bigr)\bigr]
-=h^{-1}\bigl[h(x)*(h(y)*h(z))\bigr],
-\]
+\begin{align*}
+\varphi(\varphi(x,y),z)&=h^{-1}\bigl[h\bigl(h^{-1}[h(x)*h(y)]\bigr)*h(z)\bigr]={}\\
+&=h^{-1}\bigl[(h(x)*h(y))*h(z)\bigr],\\
+\varphi(x,\varphi(y,z))&=h^{-1}\bigl[h(x)*h\bigl(h^{-1}[h(y)*h(z)]\bigr)\bigr]={}\\
+&=h^{-1}\bigl[h(x)*(h(y)*h(z))\bigr],
+\end{align*}
 и правые части совпадают по ассоциативности $*$. (Это <<перенос
 структуры>>: $h$ "--- изоморфизм операции $\varphi$ на операцию $*$; так же
 переносится и коммутативность.)
@@ -178,8 +177,8 @@ $\varphi(x,u)=x+u-c$ и $\varphi(x,u)=u-x+c$ при всех $x,u$, что
 аргументов \emph{ассоциативна}, если при подстановке $\psi$ в любое из $n$
 мест получается одна и та же функция $2n-1$ аргументов:
 \begin{multline*}
-\psi(\psi(x_1,\dots,x_n),x_{n+1},\dots,x_{2n-1})\equiv
-\psi(x_1,\psi(x_2,\dots,x_{n+1}),\dots,x_{2n-1})\equiv\dots\\
+\psi(\psi(x_1,\dots,x_n),x_{n+1},\dots,x_{2n-1})\equiv{}\\
+\equiv\psi(x_1,\psi(x_2,\dots,x_{n+1}),\dots,x_{2n-1})\equiv\dots\\
 \dots\equiv\psi(x_1,\dots,x_{n-1},\psi(x_n,\dots,x_{2n-1})).
 \end{multline*}
 Тривиальные примеры дают <<итерации>> двухместной ассоциативной операции,

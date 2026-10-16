@@ -141,10 +141,10 @@ IX. Операции с унитарным множеством $I$ и пуст�
 например, с целью их упрощения.
 
 {\small\noindent\textbf{Пример.}
-\[
-(A\cap\ov B\cap C)\cup(A\cap C)\equiv(A\cap C\cap\ov B)\cup(A\cap C\cap I)
+\begin{multline*}
+(A\cap\ov B\cap C)\cup(A\cap C)\equiv(A\cap C\cap\ov B)\cup(A\cap C\cap I)\equiv{}\\
 \equiv(A\cap C)\cap(\ov B\cup I)\equiv(A\cap C)\cap I\equiv A\cap C.
-\]
+\end{multline*}
 (Здесь использованы свойства $1^\circ$, $3^\circ$, $5^\circ$, $14^\circ$,
 $15^\circ$.)\fixed{в оригинале в левой части стоит
 $(A\cap\ov B\cap C)\cap(A\cap C)$; по ходу преобразований (вынесение
@@ -201,23 +201,23 @@ $1^\circ$--$19^\circ$.)
 
 \textsc{Решение.} В соответствии с формулой (1.2) и свойствами
 $1^\circ$--$19^\circ$ получаем
-\begin{align*}
-A\sd(B\sd C)&\equiv[A\cap(\ov{B\sd C})]\cup[\ov A\cap(B\sd C)]\equiv\\
-&\equiv\{A\cap\ov{[(B\cap\ov C)\cup(\ov B\cap C)]}\}\cup\{\ov A\cap[(B\cap\ov C)\cup(\ov B\cap C)]\}\equiv\\
-&\equiv\{A\cap[\ov{(B\cap\ov C)}\cap\ov{(\ov B\cap C)}]\}\cup\{\ov A\cap[(B\cap\ov C)\cup(\ov B\cap C)]\}\equiv\\
-&\equiv\{A\cap[(\ov B\cup C)\cap(B\cup\ov C)]\}\cup\{(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\}\equiv\\
-&\equiv\{[A\cap(\ov B\cup C)]\cap[A\cap(B\cup\ov C)]\}\cup(\ov A\cap B\cap\ov C)\cup{}\\
-&\qquad\cup(\ov A\cap\ov B\cap C)\equiv\{[(A\cap\ov B)\cup(A\cap C)]\cap[(A\cap B)\cup(A\cap\ov C)]\}\cup{}\\
-&\qquad\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\\
-&\equiv\{[(A\cap\ov B)\cap(A\cap B)]\cup[(A\cap\ov B)\cap(A\cap\ov C)]\cup[(A\cap C)\cap(A\cap B)]\cup{}\\
-&\qquad\cup[(A\cap C)\cap(A\cap\ov C)]\}\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\\
-&\equiv\{[(A\cap A)\cap(B\cap\ov B)]\cup[(A\cap A)\cap(\ov B\cap\ov C)]\cup[(A\cap A)\cap(C\cap B)]\cup{}\\
-&\qquad\cup[(A\cap A)\cap(C\cap\ov C)]\}\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\\
-&\equiv(A\cap\emptyset)\cup(A\cap\ov B\cap\ov C)\cup(A\cap B\cap C)\cup(A\cap\emptyset)\cup{}\\
-&\qquad\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\emptyset\cup(A\cap\ov B\cap\ov C)\cup{}\\
-&\qquad\cup(A\cap B\cap C)\cup\emptyset\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\\
-&\equiv(A\cap\ov B\cap\ov C)\cup(A\cap B\cap C)\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C).
-\end{align*}
+\begin{gather*}
+A\sd(B\sd C)\equiv[A\cap(\ov{B\sd C})]\cup[\ov A\cap(B\sd C)]\equiv\\
+\equiv\{A\cap\ov{[(B\cap\ov C)\cup(\ov B\cap C)]}\}\cup\{\ov A\cap[(B\cap\ov C)\cup(\ov B\cap C)]\}\equiv\\
+\equiv\{A\cap[\ov{(B\cap\ov C)}\cap\ov{(\ov B\cap C)}]\}\cup\{\ov A\cap[(B\cap\ov C)\cup(\ov B\cap C)]\}\equiv\\
+\equiv\{A\cap[(\ov B\cup C)\cap(B\cup\ov C)]\}\cup\{(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\}\equiv\\
+\equiv\{[A\cap(\ov B\cup C)]\cap[A\cap(B\cup\ov C)]\}\cup(\ov A\cap B\cap\ov C)\cup{}\\
+{}\cup(\ov A\cap\ov B\cap C)\equiv\{[(A\cap\ov B)\cup(A\cap C)]\cap[(A\cap B)\cup(A\cap\ov C)]\}\cup{}\\
+{}\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\{[(A\cap\ov B)\cap(A\cap B)]\cup{}\\
+{}\cup[(A\cap\ov B)\cap(A\cap\ov C)]\cup[(A\cap C)\cap(A\cap B)]\cup[(A\cap C)\cap{}\\
+{}\cap(A\cap\ov C)]\}\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\\
+\equiv\{[(A\cap A)\cap(B\cap\ov B)]\cup[(A\cap A)\cap(\ov B\cap\ov C)]\cup[(A\cap A)\cap{}\\
+{}\cap(C\cap B)]\cup[(A\cap A)\cap(C\cap\ov C)]\}\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\\
+\equiv(A\cap\emptyset)\cup(A\cap\ov B\cap\ov C)\cup(A\cap B\cap C)\cup(A\cap\emptyset)\cup{}\\
+{}\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\emptyset\cup(A\cap\ov B\cap\ov C)\cup{}\\
+{}\cup(A\cap B\cap C)\cup\emptyset\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\\
+\equiv(A\cap\ov B\cap\ov C)\cup(A\cap B\cap C)\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C).
+\end{gather*}
 \bookpage{17}Поскольку последнее выражение инвариантно относительно циклической
 перестановки букв (т.\,е. при замене $A$, $B$, $C$ на $C$, $A$, $B$
 соответственно), то оно равно также $C\sd(A\sd B)$. Таким образом,

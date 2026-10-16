@@ -29,15 +29,16 @@ $\cup$, $\cup$ на $\cap$, $\emptyset$ на $I$, $I$ на $\emptyset$) и,
 Действительно,\fixed{в оригинале четвертый сомножитель после раскрытия скобок напечатан как
 $(B\cup C\cup C)$; это сомножитель $(B\cup C)\cup B$, т.\,е.
 $(B\cup C\cup B)$ (на результат не влияет).}
-\begin{align*}
-&(A\cap B)\cup(A\cap C)\cup(B\cap C)\equiv[(A\cup A)\cap(A\cup C)\cap(B\cup A)\cap(B\cup C)]\cup(B\cap C)\equiv\\
-&\equiv[A\cap(A\cup C)\cap(A\cup B)\cap(B\cup C)]\cup(B\cap C)\equiv(A\cup B)\cap(A\cup B\cup C)\cap{}\\
-&\cap(A\cup B\cup B)\cap(B\cup C\cup B)\cap(A\cup C)\cap(A\cup C\cup C)\cap{}\\
-&\cap(A\cup B\cup C)\cap(B\cup C\cup C)\equiv(A\cup B)\cap(A\cup B\cup C)\cap{}\\
-&\cap(A\cup B)\cap(B\cup C)\cap(A\cup C)\cap(A\cup C)\cap(A\cup B\cup C)\cap{}\\
-&\cap(B\cup C)\equiv(A\cup B)\cap(A\cup B\cup C)\cap(B\cup C)\cap(A\cup C)\equiv{}\\
-&\equiv(A\cup B)\cap(B\cup C)\cap(A\cup C).
-\end{align*}
+\begin{gather*}
+(A\cap B)\cup(A\cap C)\cup(B\cap C)\equiv[(A\cup A)\cap(A\cup C)\cap{}\\
+{}\cap(B\cup A)\cap(B\cup C)]\cup(B\cap C)\equiv[A\cap(A\cup C)\cap(A\cup B)\cap{}\\
+{}\cap(B\cup C)]\cup(B\cap C)\equiv(A\cup B)\cap(A\cup B\cup C)\cap{}\\
+{}\cap(A\cup B\cup B)\cap(B\cup C\cup B)\cap(A\cup C)\cap(A\cup C\cup C)\cap{}\\
+{}\cap(A\cup B\cup C)\cap(B\cup C\cup C)\equiv(A\cup B)\cap(A\cup B\cup C)\cap{}\\
+{}\cap(A\cup B)\cap(B\cup C)\cap(A\cup C)\cap(A\cup C)\cap(A\cup B\cup C)\cap{}\\
+{}\cap(B\cup C)\equiv(A\cup B)\cap(A\cup B\cup C)\cap(B\cup C)\cap(A\cup C)\equiv\\
+\equiv(A\cup B)\cap(B\cup C)\cap(A\cup C).
+\end{gather*}
 
 \bookpage{20}%
 Очевидно, также, что если $F(A_1,\dots,A_n)=A_k$ ($1\le k\le n$), то

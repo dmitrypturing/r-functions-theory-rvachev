@@ -38,7 +38,7 @@ $\lambda(F)=\lambda(F^*)$.
 % Решения упражнений § 3 (с. 21--22).
 % Основа: заметки claude/p21-*.md из проекта (см. каталог notes/).
 
-\begin{remarkbox}{Общие инструменты для упражнений 1--7}
+\begin{remarkbox}[Общие инструменты для упражнений 1--7]
 Во всех упражнениях формулы рассматриваются \emph{с точностью до
 тождественного равенства}: две формулы, тождественно равные друг другу,
 считаются одной и той же (они задают одну и ту же <<операцию над
@@ -127,19 +127,16 @@ $f(00)$ & $f(01)$ & $f(10)$ & $f(11)$ & формула\\ \midrule
 
 %----------------------------------------------------------------------
 \begin{solution}[2 (\S\,3)]
-\textbf{Разминка.}
-\begin{center}\small
-\begin{tabular}{lll}
-\toprule
-$F$ & $F^*$ & самодвойственна?\\ \midrule
-$A_k$, $\ov{A_k}$ & те же & да\\
-$\emptyset$ & $I$ & нет\\
-$A\cap B$ & $A\cup B$ & нет (при $A=\emptyset$, $B=I$)\\
-$(A\cap B)\cup(\ov A\cap I)$ & $(A\cup B)\cap(\ov A\cup\emptyset)$ & нет: $\ov A\cup B$ и $\ov A\cap B$\\
-$(A\cap B)\cup(A\cap C)\cup(B\cap C)$ & $(A\cup B)\cap(A\cup C)\cap(B\cup C)$ & да "--- (1.6)\\
-\bottomrule
-\end{tabular}
-\end{center}
+\textbf{Разминка.} Формула $F$, двойственная к ней $F^*$, самодвойственна ли:
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt]
+\item $F=A_k$ или $\ov{A_k}$: $F^*=F$ "--- да;
+\item $F=\emptyset$: $F^*=I$ "--- нет;
+\item $F=A\cap B$: $F^*=A\cup B$ "--- нет (при $A=\emptyset$, $B=I$);
+\item $F=(A\cap B)\cup(\ov A\cap I)$: $F^*=(A\cup B)\cap(\ov A\cup\emptyset)$ "--- нет:
+  $F\equiv\ov A\cup B$, а $F^*\equiv\ov A\cap B$;
+\item $F=(A\cap B)\cup(A\cap C)\cup(B\cap C)$:\\
+  $F^*=(A\cup B)\cap(A\cup C)\cap(B\cup C)$ "--- да, это (1.6).
+\end{itemize}
 (Проверка (L) на четвертой строке: при подстановке $A\to\ov A$ черта над
 $A$ в формуле дает $\ov{\ov A}=A$; дополняются \emph{буквы}, а не
 литералы: $F(\ov A,\ov B)=(\ov A\cap\ov B)\cup A=A\cup\ov B$,
@@ -256,8 +253,10 @@ f(\alpha)=1\ \Rightarrow\ f(\bar\alpha)=1\qquad\forall\alpha .
 Применяя (1) к $\bar\alpha$ вместо $\alpha$ (а $\bar{\bar\alpha}=\alpha$),
 получаем обратную импликацию, т.\,е.
 \begin{equation*}\tag{2}
-f(\alpha)=f(\bar\alpha)\qquad\forall\alpha,
-\qquad\text{или}\qquad F(\ov{A_1},\dots,\ov{A_n})\equiv F(A_1,\dots,A_n).
+\begin{gathered}
+f(\alpha)=f(\bar\alpha)\quad\forall\alpha,\qquad\text{или}\\
+F(\ov{A_1},\dots,\ov{A_n})\equiv F(A_1,\dots,A_n).
+\end{gathered}
 \end{equation*}
 Обратно, (2) $\Rightarrow$ (1) очевидно. То же в множествах: $F\cap F^*=\emptyset$
 значит $F^*\subseteq\ov F$, т.\,е. (по (L)) $\ov{F(\ov A)}\subseteq\ov{F(A)}$,
@@ -291,10 +290,10 @@ $f(\bar\alpha)=f(\alpha)$. Неформально: четная формула <
 одновременно. Обратно, $F\cup F^*\equiv I$ означает
 $f(\alpha)\vee\ov{f(\bar\alpha)}=1$, т.\,е. $f(\bar\alpha)=1\Rightarrow f(\alpha)=1$,
 и тем же приемом получаем (2). Итак, для любой $F$ равносильны:
-\[
-F\cap F^*\equiv\emptyset\iff F\cup F^*\equiv I\iff F^*\equiv\ov F\iff
-F(\ov{A_1},\dots,\ov{A_n})\equiv F(A_1,\dots,A_n).
-\]
+\begin{multline*}
+F\cap F^*\equiv\emptyset\iff F\cup F^*\equiv I\iff F^*\equiv\ov F\iff{}\\
+\iff F(\ov{A_1},\dots,\ov{A_n})\equiv F(A_1,\dots,A_n).
+\end{multline*}
 Для произвольной формулы ни одно из первых двух условий не влечет
 другое <<по общим соображениям>>: например, для $F=A\cap B$ имеем
 $F\cap F^*=A\cap B\ne\emptyset$ и $F\cup F^*=A\cup B\ne I$.
@@ -344,10 +343,10 @@ F_n=(A_1\cap A_2\cap\dots\cap A_n)\cup\bigl(\ov{A_1}\cap(A_2\cup\dots\cup A_n)\b
 (<<точка лежит в $A_1$ и во всех остальных множествах, либо не лежит в
 $A_1$, но лежит хотя бы в одном из остальных>>; при $n=3$ это
 $M(\ov A,B,C)$). Прямая проверка: при $P=A_2\cap\dots\cap A_n\subseteq U=A_2\cup\dots\cup A_n$
-\[
-F_n^*=(A_1\cup U)\cap(\ov{A_1}\cup P)=(A_1\cap P)\cup(\ov{A_1}\cap U)\cup(U\cap P)
+\begin{multline*}
+F_n^*=(A_1\cup U)\cap(\ov{A_1}\cup P)=(A_1\cap P)\cup(\ov{A_1}\cap U)\cup(U\cap P)={}\\
 =(A_1\cap P)\cup(\ov{A_1}\cap U)=F_n,
-\]
+\end{multline*}
 так как $U\cap P=P=(A_1\cap P)\cup(\ov{A_1}\cap P)$ поглощается.
 Существенная зависимость: при $A_2=I$, $A_3=\dots=A_n=\emptyset$ (нужен
 аргумент $A_3$, т.\,е. $n\ge3$) $F_n=\ov{A_1}$; при $A_1=I$ и всех

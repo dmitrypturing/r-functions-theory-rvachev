@@ -1,10 +1,12 @@
-\documentclass[11pt,a4paper,openany]{book}
+\documentclass[10pt,openany]{book}
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
 \usepackage{amsmath,amssymb,amsthm,mathtools}
 \usepackage{geometry}
-\geometry{left=2.4cm,right=3.2cm,top=2.4cm,bottom=2.4cm,marginparwidth=1.9cm,marginparsep=4mm}
+% формат книги: 60x90/16 = 145x215 мм, полоса набора 6 1/4 кв. (113 мм)
+\geometry{paperwidth=145mm,paperheight=215mm,textwidth=113mm,textheight=178mm,
+  inner=14mm,top=20mm,headheight=12pt,headsep=4mm,footskip=8mm,marginparwidth=11.5mm,marginparsep=2.5mm}
 \usepackage{enumitem}
 \usepackage{tikz}
 \usetikzlibrary{patterns,calc,arrows.meta,positioning}
@@ -12,10 +14,12 @@
 \usepackage{xcolor}
 \usepackage{marginnote}
 \usepackage{booktabs}
+\usepackage{longtable}
 \usepackage[hidelinks]{hyperref}
 
 \input{macros}
-\emergencystretch=2.5em
+\emergencystretch=3em
+\tolerance=1500
 \usepackage{fancyhdr}
 \pagestyle{fancy}\fancyhf{}
 \fancyhead[LE,RO]{\thepage}\fancyhead[RE]{\small\itshape В.\,Л.~Рвачев. Теория $R$-функций}\fancyhead[LO]{\small\itshape\nouppercase{\rightmark}}
