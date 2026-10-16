@@ -1,5 +1,5 @@
-tex/*.aux
-tex/*.log
-tex/*.out
-tex/*.toc
-tex/main.pdf
+*/*.aux
+*/*.log
+*/*.out
+*/*.toc
+*/main.pdf

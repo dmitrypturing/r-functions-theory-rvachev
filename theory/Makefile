@@ -1,8 +1,8 @@
-# Сборка: make  (нужен pdflatex с babel-russian, T2A/cm-super, tikz, tcolorbox)
+# make: собрать конспект; результат копируется в ../rvachev-theory-of-r-functions.pdf
 main.pdf: *.tex
 	pdflatex -interaction=nonstopmode -halt-on-error main.tex
 	pdflatex -interaction=nonstopmode -halt-on-error main.tex
-	cp main.pdf ../rvachev-ch1-pp1-29.pdf
+	cp main.pdf ../rvachev-theory-of-r-functions.pdf
 
 clean:
 	rm -f *.aux *.log *.out *.toc main.pdf

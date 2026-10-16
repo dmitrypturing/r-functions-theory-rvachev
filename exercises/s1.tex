@@ -1,0 +1,155 @@
+\section*{\S\,1. Множества и логические операции над ними}
+\addcontentsline{toc}{section}{\S\,1. Множества и логические операции над ними}
+\markright{\S\,1. Множества и логические операции над ними}
+\subsection*{Условия}
+1. Доказать тождества
+\begin{equation}\tag{1.4}
+\begin{gathered}
+A\sd B\equiv(A\cup B)\setminus(A\cap B);\\
+A\cup B\equiv(A\sd B)\sd(A\cap B);\qquad A\setminus B\equiv A\sd(A\cap B);\\
+(A\cap B)\cup B\equiv B;\qquad (A\cup B)\cap B\equiv B;\\
+(A\cap B)\cup(A\cap\ov B)\equiv A;\qquad (A\cup B)\cap(A\cup\ov B)\equiv A;\\
+(\ov A\cap B)\cup(A\cap\ov B)\equiv(A\cup B)\cap(\ov A\cup\ov B).
+\end{gathered}
+\end{equation}
+(Для доказательства использовать формулы (1.1), (1.2) и свойства
+$1^\circ$--$19^\circ$.)
+
+2. Показать, что симметрическая разность "--- это коммутативная
+и ассоциативная операции.
+
+\textsc{Решение.} В соответствии с формулой (1.2) и свойствами
+$1^\circ$--$19^\circ$ получаем
+\begin{align*}
+A\sd(B\sd C)&\equiv[A\cap(\ov{B\sd C})]\cup[\ov A\cap(B\sd C)]\equiv\\
+&\equiv\{A\cap\ov{[(B\cap\ov C)\cup(\ov B\cap C)]}\}\cup\{\ov A\cap[(B\cap\ov C)\cup(\ov B\cap C)]\}\equiv\\
+&\equiv\{A\cap[\ov{(B\cap\ov C)}\cap\ov{(\ov B\cap C)}]\}\cup\{\ov A\cap[(B\cap\ov C)\cup(\ov B\cap C)]\}\equiv\\
+&\equiv\{A\cap[(\ov B\cup C)\cap(B\cup\ov C)]\}\cup\{(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\}\equiv\\
+&\equiv\{[A\cap(\ov B\cup C)]\cap[A\cap(B\cup\ov C)]\}\cup(\ov A\cap B\cap\ov C)\cup{}\\
+&\qquad\cup(\ov A\cap\ov B\cap C)\equiv\{[(A\cap\ov B)\cup(A\cap C)]\cap[(A\cap B)\cup(A\cap\ov C)]\}\cup{}\\
+&\qquad\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\\
+&\equiv\{[(A\cap\ov B)\cap(A\cap B)]\cup[(A\cap\ov B)\cap(A\cap\ov C)]\cup[(A\cap C)\cap(A\cap B)]\cup{}\\
+&\qquad\cup[(A\cap C)\cap(A\cap\ov C)]\}\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\\
+&\equiv\{[(A\cap A)\cap(B\cap\ov B)]\cup[(A\cap A)\cap(\ov B\cap\ov C)]\cup[(A\cap A)\cap(C\cap B)]\cup{}\\
+&\qquad\cup[(A\cap A)\cap(C\cap\ov C)]\}\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\\
+&\equiv(A\cap\emptyset)\cup(A\cap\ov B\cap\ov C)\cup(A\cap B\cap C)\cup(A\cap\emptyset)\cup{}\\
+&\qquad\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\emptyset\cup(A\cap\ov B\cap\ov C)\cup{}\\
+&\qquad\cup(A\cap B\cap C)\cup\emptyset\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C)\equiv\\
+&\equiv(A\cap\ov B\cap\ov C)\cup(A\cap B\cap C)\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C).
+\end{align*}
+Поскольку последнее выражение инвариантно относительно циклической
+перестановки букв (т.\,е. при замене $A$, $B$, $C$ на $C$, $A$, $B$
+соответственно), то оно равно также $C\sd(A\sd B)$. Таким образом,
+ассоциативность операции $A\sd B$ доказана. Ее коммутативность
+очевидна.\fixed{в оригинале в восьмой строке выкладки стоит скобка
+<<$([A\cap A)$>> вместо <<$[(A\cap A)$>>.}
+
+3. Пусть $I=\R$. Показать, что равенство
+$(A\cap B)\cup C=C\cup(B\cap C)$ справедливо, если $A=[a,b]$, $B=[c,d]$,
+$C=[e,f]$ и $e\le\max(a,c)$; $f\ge\min(b,d)$, но оно не является
+тождеством.
+
+4. Показать, что правила де Моргана $10^\circ$ и $11^\circ$ верны для
+$n$ ($n\ge2$) компонент, т.\,е.
+\begin{equation}\tag{1.5}
+\ov{\bigcap_{i=1}^{i=n}A_i}\equiv\bigcup_{i=1}^{i=n}\ov{A_i};\qquad
+\ov{\bigcup_{i=1}^{i=n}A_i}\equiv\bigcap_{i=1}^{i=n}\ov{A_i}.
+\end{equation}
+
+\subsection*{Решения}
+\begin{solution}[1 (\S\,1)]
+Будем пользоваться только (1.1), (1.2) и свойствами $1^\circ$--$19^\circ$.
+Полезно заранее заметить два следствия.
+
+(а) \emph{Поглощение:} $(A\cap B)\cup B\equiv B$ и $(A\cup B)\cap B\equiv B$.
+Действительно,
+$(A\cap B)\cup B\overset{14^\circ}{\equiv}(A\cap B)\cup(I\cap B)
+\overset{5^\circ}{\equiv}(A\cup I)\cap B\overset{15^\circ}{\equiv}I\cap B\equiv B$;
+второе тождество двойственно первому (те же шаги с $6^\circ$, $17^\circ$,
+$16^\circ$):
+$(A\cup B)\cap B\equiv(A\cup B)\cap(\emptyset\cup B)\equiv(A\cap\emptyset)\cup B\equiv\emptyset\cup B\equiv B$.
+Это четвертое и пятое тождества (1.4).
+
+(б) \emph{Склеивание:}
+$(A\cap B)\cup(A\cap\ov B)\overset{5^\circ}{\equiv}A\cap(B\cup\ov B)
+\overset{13^\circ}{\equiv}A\cap I\equiv A$;
+$(A\cup B)\cap(A\cup\ov B)\overset{6^\circ}{\equiv}A\cup(B\cap\ov B)
+\overset{12^\circ}{\equiv}A\cup\emptyset\equiv A$. Это шестое и седьмое тождества.
+
+\smallskip
+\emph{Последнее тождество.} Раскроем скобки в правой части по $5^\circ$:
+\[
+(A\cup B)\cap(\ov A\cup\ov B)\equiv(A\cap\ov A)\cup(A\cap\ov B)\cup(B\cap\ov A)\cup(B\cap\ov B)
+\equiv(A\cap\ov B)\cup(\ov A\cap B),
+\]
+так как $A\cap\ov A\equiv B\cap\ov B\equiv\emptyset$. Попутно получена
+полезная формула $A\sd B\equiv(A\cup B)\cap(\ov A\cup\ov B)$.
+
+\emph{Первое тождество.} По (1.1) и $10^\circ$:
+$(A\cup B)\setminus(A\cap B)\equiv(A\cup B)\cap\ov{A\cap B}\equiv(A\cup B)\cap(\ov A\cup\ov B)$,
+а это, как только что показано, $A\sd B$.
+
+\emph{Третье тождество.} По (1.2), $10^\circ$ и $9^\circ$:
+\begin{multline*}
+A\sd(A\cap B)\equiv\bigl(A\cap\ov{A\cap B}\bigr)\cup\bigl(\ov A\cap A\cap B\bigr)
+\equiv\bigl(A\cap(\ov A\cup\ov B)\bigr)\cup\emptyset\equiv{}\\
+\equiv(A\cap\ov A)\cup(A\cap\ov B)\equiv A\cap\ov B\equiv A\setminus B.
+\end{multline*}
+
+\emph{Второе тождество.} Обозначим $D=A\sd B=(A\cap\ov B)\cup(\ov A\cap B)$,
+$P=A\cap B$. Заметим, что $D\cap P\equiv\emptyset$ (каждый член $D$
+содержит $\ov A$ или $\ov B$). Тогда $D\cap\ov P\equiv D$ (так как
+$D\equiv(D\cap P)\cup(D\cap\ov P)$ по склеиванию) и аналогично
+$P\cap\ov D\equiv P$. Поэтому
+\[
+(A\sd B)\sd(A\cap B)\equiv(D\cap\ov P)\cup(\ov D\cap P)\equiv D\cup P
+\equiv(A\cap\ov B)\cup(\ov A\cap B)\cup(A\cap B).
+\]
+Склеивая $(A\cap\ov B)\cup(A\cap B)\equiv A$ и $(\ov A\cap B)\cup(A\cap B)\equiv B$
+(член $A\cap B$ можно повторить по $8^\circ$), получаем $A\cup B$.
+\end{solution}
+
+\begin{solution}[2 (\S\,1): дополнение]
+Решение в книге приводит $A\sd(B\sd C)$ к виду
+$K_{100}\cup K_{111}\cup K_{010}\cup K_{001}$, где
+$K_{\alpha\beta\gamma}=A^\alpha\cap B^\beta\cap C^\gamma$ ($X^1=X$,
+$X^0=\ov X$). Это ровно те <<кусочки>> диаграммы Эйлера, в которых точка
+принадлежит \emph{нечетному} числу множеств. Отсюда сразу видна и
+коммутативность, и ассоциативность: для любых $A_1,\dots,A_n$ множество
+$A_1\sd\dots\sd A_n$ (при любой расстановке скобок) "--- это множество
+точек, принадлежащих нечетному числу из $A_i$. (Индукция: $x\in X\sd Y$
+$\iff$ $x$ лежит ровно в одном из $X$, $Y$, т.\,е. число вхождений в $X\sd Y$
+имеет ту же четность, что сумма чисел вхождений.) Коммутативность $A\sd B\equiv B\sd A$
+следует из (1.2) и $1^\circ$, $2^\circ$.
+\end{solution}
+
+\begin{solution}[3 (\S\,1)]
+По поглощению $C\cup(B\cap C)\equiv C$, поэтому равенство
+$(A\cap B)\cup C=C\cup(B\cap C)$ равносильно $(A\cap B)\cup C=C$, т.\,е.
+\[
+A\cap B\subset C .
+\]
+Для отрезков $A\cap B=[\max(a,c),\ \min(b,d)]$ (пусто, если
+$\max(a,c)>\min(b,d)$). Если $e\le\max(a,c)$ и $f\ge\min(b,d)$, то
+$[\max(a,c),\min(b,d)]\subset[e,f]$, и равенство выполнено (если же
+$A\cap B=\emptyset$, оно тем более верно).
+
+Тождеством равенство не является: при $A=B=[0,1]$, $C=[2,3]$ слева
+$[0,1]\cup[2,3]$, справа $[2,3]$. Вообще, равенство верно в точности при
+$A\cap B\subset C$; условия задачи "--- достаточные (а при
+$A\cap B\neq\emptyset$ и необходимые).
+\end{solution}
+
+\begin{solution}[4 (\S\,1)]
+Индукция по $n$. При $n=2$ это $10^\circ$, $11^\circ$. Пусть (1.5) верно
+для $n$. Тогда по ассоциативности, $10^\circ$ и предположению индукции
+\[
+\ov{\bigcap_{i=1}^{n+1}A_i}\equiv\ov{\Bigl(\bigcap_{i=1}^{n}A_i\Bigr)\cap A_{n+1}}
+\equiv\ov{\bigcap_{i=1}^{n}A_i}\cup\ov{A_{n+1}}
+\equiv\Bigl(\bigcup_{i=1}^{n}\ov{A_i}\Bigr)\cup\ov{A_{n+1}}\equiv\bigcup_{i=1}^{n+1}\ov{A_i}.
+\]
+Второе тождество получается так же из $11^\circ$ (или из первого,
+примененного к $\ov{A_i}$, с последующим взятием дополнения и законом
+$9^\circ$). Можно рассуждать и непосредственно: $x\notin\bigcap A_i$
+$\iff$ $x\notin A_i$ хотя бы для одного $i$ $\iff$ $x\in\bigcup\ov{A_i}$.
+\end{solution}
