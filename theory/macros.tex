@@ -22,8 +22,13 @@
   boxrule=0.4pt,arc=1pt,title={#1},fonttitle=\bfseries\small}
 % исправление опечатки: отметка в тексте
 \newcommand{\fixed}[1]{\footnote{\textit{Исправлено:} #1}}
+% примечание к месту, оставленному как в оригинале
+\newcommand{\notefn}[1]{\footnote{\textit{Примечание:} #1}}
 \theoremstyle{plain}
 \newtheorem*{lemma*}{Лемма}
 \newtheorem*{theorem*}{Теорема}
 \newtheorem*{prop*}{Утверждение}
 \newcommand{\exitem}[1]{\par\smallskip\noindent\textbf{#1}~}
+% --- для решений ---
+\newcommand{\answer}{\par\medskip\noindent\textbf{Ответ.}\enspace}
+\newenvironment{keystmt}{\par\smallskip\begin{list}{}{\leftmargin=1.4em\rightmargin=0.4em\topsep=3pt\parsep=0pt}\item\relax\itshape}{\end{list}\smallskip}

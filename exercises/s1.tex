@@ -57,99 +57,300 @@ $n$ ($n\ge2$) компонент, т.\,е.
 \end{equation}
 
 \subsection*{Решения}
+
 \begin{solution}[1 (\S\,1)]
-Будем пользоваться только (1.1), (1.2) и свойствами $1^\circ$--$19^\circ$.
-Полезно заранее заметить два следствия.
+Нужно вывести восемь тождеств (1.4), пользуясь только определениями
+разности (1.1), симметрической разности (1.2) и свойствами
+$1^\circ$--$19^\circ$. Тождество "--- это равенство, верное при
+\emph{любых} множествах $A$, $B$, поэтому проверка на одном примере его не
+доказывает. Но пример полезен, чтобы увидеть, что именно утверждается.
+Возьмем $I=\{1,2,3,4\}$, $A=\{1,2\}$, $B=\{2,3\}$. Тогда
+$\ov A=\{3,4\}$, $\ov B=\{1,4\}$, $A\cup B=\{1,2,3\}$, $A\cap B=\{2\}$,
+$A\sd B=\{1,3\}$, $A\setminus B=\{1\}$, и для каждого из тождеств (1.4)
+обе части дают одно и то же множество:
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+& левая часть & правая часть\\ \midrule
+1-е & $A\sd B=\{1,3\}$ & $\{1,2,3\}\setminus\{2\}=\{1,3\}$\\
+2-е & $A\cup B=\{1,2,3\}$ & $\{1,3\}\sd\{2\}=\{1,2,3\}$\\
+3-е & $A\setminus B=\{1\}$ & $\{1,2\}\sd\{2\}=\{1\}$\\
+4-е & $\{2\}\cup\{2,3\}=\{2,3\}$ & $B=\{2,3\}$\\
+5-е & $\{1,2,3\}\cap\{2,3\}=\{2,3\}$ & $B=\{2,3\}$\\
+6-е & $\{2\}\cup\{1\}=\{1,2\}$ & $A=\{1,2\}$\\
+7-е & $\{1,2,3\}\cap\{1,2,4\}=\{1,2\}$ & $A=\{1,2\}$\\
+8-е & $\{3\}\cup\{1\}=\{1,3\}$ & $\{1,2,3\}\cap\{1,3,4\}=\{1,3\}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Пример выбран не случайно: каждая из четырех <<областей>> $A\cap B$,
+$A\cap\ov B$, $\ov A\cap B$, $\ov A\cap\ov B$ здесь состоит ровно из одной
+точки ($2$, $1$, $3$, $4$). В решении упражнения~1 \S\,2 объяснено, почему
+совпадение обеих частей на таком примере уже гарантирует тождество.
+Здесь же требуется вывод из свойств $1^\circ$--$19^\circ$, и мы его
+проведем, начиная с самых простых тождеств "--- четвертого"--~седьмого:
+они понадобятся для остальных.
 
-(а) \emph{Поглощение:} $(A\cap B)\cup B\equiv B$ и $(A\cup B)\cap B\equiv B$.
-Действительно,
-$(A\cap B)\cup B\overset{14^\circ}{\equiv}(A\cap B)\cup(I\cap B)
-\overset{5^\circ}{\equiv}(A\cup I)\cap B\overset{15^\circ}{\equiv}I\cap B\equiv B$;
-второе тождество двойственно первому (те же шаги с $6^\circ$, $17^\circ$,
-$16^\circ$):
-$(A\cup B)\cap B\equiv(A\cup B)\cap(\emptyset\cup B)\equiv(A\cap\emptyset)\cup B\equiv\emptyset\cup B\equiv B$.
-Это четвертое и пятое тождества (1.4).
+\emph{Поглощение} (4-е и 5-е тождества). Смысл: присоединить к $B$ его
+часть $A\cap B$ "--- значит ничего не присоединить; пересечь $B$
+с множеством $A\cup B$, которое содержит $B$, "--- значит получить $B$.
+Чтобы вывести первое из свойств, запишем $B$ как $I\cap B$ и вынесем
+общий множитель:
+\begin{multline*}
+(A\cap B)\cup B\overset{14^\circ}{\equiv}(A\cap B)\cup(I\cap B)
+\overset{1^\circ}{\equiv}(B\cap A)\cup(B\cap I)\overset{5^\circ}{\equiv}{}\\
+\equiv B\cap(A\cup I)\overset{2^\circ,\,15^\circ}{\equiv}B\cap I
+\overset{1^\circ,\,14^\circ}{\equiv}B .
+\end{multline*}
+Второе выводится теми же шагами, только роль $I$ играет $\emptyset$:
+\begin{multline*}
+(A\cup B)\cap B\overset{17^\circ}{\equiv}(A\cup B)\cap(\emptyset\cup B)
+\overset{2^\circ}{\equiv}(B\cup A)\cap(B\cup\emptyset)\overset{6^\circ}{\equiv}{}\\
+\equiv B\cup(A\cap\emptyset)\overset{1^\circ,\,16^\circ}{\equiv}B\cup\emptyset
+\overset{2^\circ,\,17^\circ}{\equiv}B .
+\end{multline*}
 
-(б) \emph{Склеивание:}
-$(A\cap B)\cup(A\cap\ov B)\overset{5^\circ}{\equiv}A\cap(B\cup\ov B)
-\overset{13^\circ}{\equiv}A\cap I\equiv A$;
-$(A\cup B)\cap(A\cup\ov B)\overset{6^\circ}{\equiv}A\cup(B\cap\ov B)
-\overset{12^\circ}{\equiv}A\cup\emptyset\equiv A$. Это шестое и седьмое тождества.
+\emph{Склеивание} (6-е и 7-е тождества). Смысл: каждая точка $A$ либо
+лежит в $B$, либо не лежит. Вывод:
+\begin{gather*}
+(A\cap B)\cup(A\cap\ov B)\overset{5^\circ}{\equiv}A\cap(B\cup\ov B)
+\overset{13^\circ}{\equiv}A\cap I\overset{1^\circ,\,14^\circ}{\equiv}A,\\
+(A\cup B)\cap(A\cup\ov B)\overset{6^\circ}{\equiv}A\cup(B\cap\ov B)
+\overset{12^\circ}{\equiv}A\cup\emptyset\overset{2^\circ,\,17^\circ}{\equiv}A.
+\end{gather*}
 
-\smallskip
-\emph{Последнее тождество.} Раскроем скобки в правой части по $5^\circ$:
+\emph{Восьмое тождество.} Обе его части описывают точки, лежащие ровно
+в одном из множеств $A$, $B$: левая "--- прямо по определению, правая "---
+как точки, лежащие хотя бы в одном из них ($A\cup B$) и не лежащие хотя бы
+в одном ($\ov A\cup\ov B$). Чтобы получить левую часть из правой, раскроем
+скобки. По $5^\circ$ (с общим множителем $A\cup B$)
 \[
-(A\cup B)\cap(\ov A\cup\ov B)\equiv(A\cap\ov A)\cup(A\cap\ov B)\cup(B\cap\ov A)\cup(B\cap\ov B)
-\equiv(A\cap\ov B)\cup(\ov A\cap B),
+(A\cup B)\cap(\ov A\cup\ov B)\equiv[(A\cup B)\cap\ov A]\cup[(A\cup B)\cap\ov B],
 \]
-так как $A\cap\ov A\equiv B\cap\ov B\equiv\emptyset$. Попутно получена
-полезная формула $A\sd B\equiv(A\cup B)\cap(\ov A\cup\ov B)$.
+а каждую из квадратных скобок снова раскроем по $1^\circ$ и $5^\circ$:
+$(A\cup B)\cap\ov A\equiv(\ov A\cap A)\cup(\ov A\cap B)$ и
+$(A\cup B)\cap\ov B\equiv(\ov B\cap A)\cup(\ov B\cap B)$. По $1^\circ$
+и $12^\circ$ члены $\ov A\cap A$ и $\ov B\cap B$ пусты, и по $17^\circ$,
+$2^\circ$, $4^\circ$ остается $(\ov A\cap B)\cup(\ov B\cap A)$, т.\,е.
+(с перестановкой множителей по $1^\circ$) левая часть восьмого тождества.
+Она отличается от выражения (1.2) для $A\sd B$ только порядком членов
+и множителей ($2^\circ$, $1^\circ$), так что попутно получено полезное
+представление
+\begin{equation*}\tag{$*$}
+A\sd B\equiv(A\cup B)\cap(\ov A\cup\ov B).
+\end{equation*}
 
-\emph{Первое тождество.} По (1.1) и $10^\circ$:
-$(A\cup B)\setminus(A\cap B)\equiv(A\cup B)\cap\ov{A\cap B}\equiv(A\cup B)\cap(\ov A\cup\ov B)$,
-а это, как только что показано, $A\sd B$.
+\emph{Первое тождество.} Смысл: точки, лежащие хотя бы в одном из
+множеств, но не в обоих, "--- это точки, лежащие ровно в одном. Вывод:
+\[
+(A\cup B)\setminus(A\cap B)\overset{(1.1)}{\equiv}(A\cup B)\cap\ov{A\cap B}
+\overset{10^\circ}{\equiv}(A\cup B)\cap(\ov A\cup\ov B)\overset{(*)}{\equiv}A\sd B .
+\]
 
-\emph{Третье тождество.} По (1.2), $10^\circ$ и $9^\circ$:
-\begin{multline*}
-A\sd(A\cap B)\equiv\bigl(A\cap\ov{A\cap B}\bigr)\cup\bigl(\ov A\cap A\cap B\bigr)
-\equiv\bigl(A\cap(\ov A\cup\ov B)\bigr)\cup\emptyset\equiv{}\\
-\equiv(A\cap\ov A)\cup(A\cap\ov B)\equiv A\cap\ov B\equiv A\setminus B.
-\end{multline*}
+\emph{Третье тождество.} Смысл: симметрическая разность $A$ и $A\cap B$
+состоит из точек $A$, не лежащих в $A\cap B$ (т.\,е. не лежащих в $B$),
+и точек $A\cap B$, не лежащих в $A$, "--- а таких нет. По (1.2)
+\[
+A\sd(A\cap B)\equiv\bigl[A\cap\ov{A\cap B}\bigr]\cup\bigl[(A\cap B)\cap\ov A\bigr].
+\]
+Первый член: $A\cap\ov{A\cap B}\overset{10^\circ}{\equiv}A\cap(\ov A\cup\ov B)
+\overset{5^\circ}{\equiv}(A\cap\ov A)\cup(A\cap\ov B)
+\overset{12^\circ,\,17^\circ}{\equiv}A\cap\ov B$. Второй член: по $3^\circ$
+и $1^\circ$ переставим множители, $(A\cap B)\cap\ov A\equiv(A\cap\ov A)\cap B$,
+и по $12^\circ$, $16^\circ$ он пуст. Остается
+$(A\cap\ov B)\cup\emptyset\equiv A\cap\ov B\overset{(1.1)}{\equiv}A\setminus B$
+($2^\circ$, $17^\circ$).
 
-\emph{Второе тождество.} Обозначим $D=A\sd B=(A\cap\ov B)\cup(\ov A\cap B)$,
-$P=A\cap B$. Заметим, что $D\cap P\equiv\emptyset$ (каждый член $D$
-содержит $\ov A$ или $\ov B$). Тогда $D\cap\ov P\equiv D$ (так как
-$D\equiv(D\cap P)\cup(D\cap\ov P)$ по склеиванию) и аналогично
-$P\cap\ov D\equiv P$. Поэтому
-\begin{multline*}
-(A\sd B)\sd(A\cap B)\equiv(D\cap\ov P)\cup(\ov D\cap P)\equiv D\cup P\equiv{}\\
-\equiv(A\cap\ov B)\cup(\ov A\cap B)\cup(A\cap B).
-\end{multline*}
-Склеивая $(A\cap\ov B)\cup(A\cap B)\equiv A$ и $(\ov A\cap B)\cup(A\cap B)\equiv B$
-(член $A\cap B$ можно повторить по $8^\circ$), получаем $A\cup B$.
+\emph{Второе тождество.} Смысл: $A\cup B$ складывается из двух
+непересекающихся частей "--- точек, лежащих ровно в одном из множеств
+($A\sd B$), и точек, лежащих в обоих ($A\cap B$), "--- а симметрическая
+разность непересекающихся множеств есть их объединение. Проведем это
+рассуждение в виде вывода; обозначим $D=A\sd B$, $P=A\cap B$.
+
+(а) $D\cap P\equiv\emptyset$. По (1.2) и $5^\circ$ (с $1^\circ$)
+$D\cap P\equiv[(A\cap\ov B)\cap(A\cap B)]\cup[(\ov A\cap B)\cap(A\cap B)]$.
+Переставив множители ($1^\circ$, $3^\circ$), получаем в первой скобке
+$(A\cap A)\cap(\ov B\cap B)$, во второй $(\ov A\cap A)\cap(B\cap B)$; по
+$1^\circ$, $12^\circ$, $16^\circ$ обе пусты, и $D\cap P\equiv\emptyset$
+($17^\circ$).
+
+(б) Если $X\cap Y\equiv\emptyset$, то $X\sd Y\equiv X\cup Y$. Действительно,
+по склеиванию (6-е тождество для множеств $X$, $Y$)
+$X\equiv(X\cap Y)\cup(X\cap\ov Y)\equiv\emptyset\cup(X\cap\ov Y)\equiv X\cap\ov Y$,
+и точно так же $Y\equiv(Y\cap X)\cup(Y\cap\ov X)\equiv Y\cap\ov X$ (здесь
+$Y\cap X\equiv X\cap Y\equiv\emptyset$ по $1^\circ$). Поэтому
+$X\sd Y\equiv(X\cap\ov Y)\cup(Y\cap\ov X)\equiv X\cup Y$.
+
+(в) Из (а) и (б):
+$(A\sd B)\sd(A\cap B)\equiv D\cup P\equiv(A\cap\ov B)\cup(\ov A\cap B)\cup(A\cap B)$.
+Повторим член $A\cap B$ дважды ($8^\circ$) и сгруппируем члены ($2^\circ$,
+$4^\circ$):
+\[
+D\cup P\equiv[(A\cap B)\cup(A\cap\ov B)]\cup[(A\cap B)\cup(\ov A\cap B)].
+\]
+Первая скобка по склеиванию равна $A$, вторая "--- тоже по склеиванию,
+с переставленными буквами: $(A\cap B)\cup(\ov A\cap B)\overset{1^\circ}{\equiv}
+(B\cap A)\cup(B\cap\ov A)\equiv B$. Получаем $A\cup B$.
+
+\answer Все восемь тождеств (1.4) выводятся из (1.1), (1.2) и свойств
+$1^\circ$--$19^\circ$, как показано выше. Попутно получено представление
+$A\sd B\equiv(A\cup B)\cap(\ov A\cup\ov B)$.
 \end{solution}
 
-\begin{solution}[2 (\S\,1): дополнение]
-Решение в книге приводит $A\sd(B\sd C)$ к виду
-$K_{100}\cup K_{111}\cup K_{010}\cup K_{001}$, где
-$K_{\alpha\beta\gamma}=A^\alpha\cap B^\beta\cap C^\gamma$ ($X^1=X$,
-$X^0=\ov X$). Это ровно те <<кусочки>> диаграммы Эйлера, в которых точка
-принадлежит \emph{нечетному} числу множеств. Отсюда сразу видна и
-коммутативность, и ассоциативность: для любых $A_1,\dots,A_n$ множество
-$A_1\sd\dots\sd A_n$ (при любой расстановке скобок) "--- это множество
-точек, принадлежащих нечетному числу из $A_i$. (Индукция: $x\in X\sd Y$
-$\iff$ $x$ лежит ровно в одном из $X$, $Y$, т.\,е. число вхождений в $X\sd Y$
-имеет ту же четность, что сумма чисел вхождений.) Коммутативность $A\sd B\equiv B\sd A$
-следует из (1.2) и $1^\circ$, $2^\circ$.
+\begin{solution}[2 (\S\,1): дополнение к решению в книге]
+В книге выражение $A\sd(B\sd C)$ приведено к виду
+\begin{multline*}
+E(A,B,C)=(A\cap\ov B\cap\ov C)\cup(A\cap B\cap C)\cup{}\\
+\cup(\ov A\cap B\cap\ov C)\cup(\ov A\cap\ov B\cap C),
+\end{multline*}
+затем сказано, что $E$ не меняется при циклической перестановке букв, и
+отсюда выведена ассоциативность. Разберем этот последний шаг подробнее
+"--- в нем есть тонкость.
+
+Сначала проверим саму инвариантность. При замене $A\to C$, $B\to A$,
+$C\to B$ четыре члена переходят в
+\[
+C\cap\ov A\cap\ov B,\qquad C\cap A\cap B,\qquad \ov C\cap A\cap\ov B,\qquad
+\ov C\cap\ov A\cap B,
+\]
+т.\,е. (после перестановки множителей по $1^\circ$, $3^\circ$)
+в четвертый, второй, первый и третий члены $E$; объединение от порядка
+членов не зависит ($2^\circ$, $4^\circ$). Значит, $E(C,A,B)\equiv E(A,B,C)$.
+
+Что из этого следует? Так как $E(A,B,C)\equiv A\sd(B\sd C)$ при любых
+множествах, то, подставив $C,A,B$ вместо $A,B,C$, получаем
+$E(C,A,B)\equiv C\sd(A\sd B)$. Итак, $A\sd(B\sd C)\equiv C\sd(A\sd B)$.
+Чтобы прийти к $(A\sd B)\sd C$, нужно еще поменять местами $C$ и $A\sd B$,
+т.\,е. воспользоваться \emph{коммутативностью}. Поэтому ее надо установить
+первой. Она прямо следует из (1.2): $A\sd B\equiv(A\cap\ov B)\cup(B\cap\ov A)$,
+а $B\sd A\equiv(B\cap\ov A)\cup(A\cap\ov B)$ "--- то же объединение,
+записанное в другом порядке ($2^\circ$).
+
+Смысл результата. Четыре члена $E$ "--- это ровно те области диаграммы
+Эйлера трех множеств, точки которых лежат в \emph{нечетном} числе
+множеств: в одном ($A\cap\ov B\cap\ov C$ и еще два) или во всех трех
+($A\cap B\cap C$). Это наблюдение дает второе, короткое доказательство
+обоих свойств. Сопоставим точке $x$ числа $a,b,c\in\{0,1\}$: $a=1$, если
+$x\in A$, и $a=0$ иначе; так же $b$ для $B$ и $c$ для $C$. По (1.2) точка
+лежит в $X\sd Y$ тогда и только тогда, когда она лежит ровно в одном из
+множеств $X$, $Y$. На языке чисел это значит: признак принадлежности к
+$X\sd Y$ равен сумме признаков принадлежности к $X$ и к $Y$ по модулю~2
+($0\oplus0=0$, $0\oplus1=1\oplus0=1$, $1\oplus1=0$). Поэтому
+\begin{gather*}
+x\in A\sd(B\sd C)\iff a\oplus(b\oplus c)=1,\\
+x\in(A\sd B)\sd C\iff(a\oplus b)\oplus c=1,
+\end{gather*}
+и обе суммы равны остатку от деления $a+b+c$ на 2. Значит, оба множества
+состоят из одних и тех же точек "--- лежащих в нечетном числе множеств
+$A$, $B$, $C$ "--- при любых $A$, $B$, $C$. Коммутативность точно так же
+следует из равенства $a\oplus b=b\oplus a$.
+
+\answer Симметрическая разность коммутативна (это прямо видно из (1.2)
+и $2^\circ$) и ассоциативна; в рассуждении книги коммутативность
+используется на последнем шаге, при переходе от $C\sd(A\sd B)$
+к $(A\sd B)\sd C$. Множество $A\sd(B\sd C)\equiv(A\sd B)\sd C$ состоит из
+точек, лежащих в нечетном числе множеств $A$, $B$, $C$.
 \end{solution}
 
 \begin{solution}[3 (\S\,1)]
-По поглощению $C\cup(B\cap C)\equiv C$, поэтому равенство
-$(A\cap B)\cup C=C\cup(B\cap C)$ равносильно $(A\cap B)\cup C=C$, т.\,е.
+Сначала упростим правую часть. По поглощению (4-е тождество (1.4),
+выведенное в решении упражнения~1: $(X\cap Y)\cup Y\equiv Y$) и по $2^\circ$
+имеем $C\cup(B\cap C)\equiv(B\cap C)\cup C\equiv C$. Значит, проверяемое
+равенство $(A\cap B)\cup C=C\cup(B\cap C)$ равносильно равенству
+$(A\cap B)\cup C=C$, т.\,е. включению
 \[
-A\cap B\subset C .
+A\cap B\subset C
 \]
-Для отрезков $A\cap B=[\max(a,c),\ \min(b,d)]$ (пусто, если
-$\max(a,c)>\min(b,d)$). Если $e\le\max(a,c)$ и $f\ge\min(b,d)$, то
-$[\max(a,c),\min(b,d)]\subset[e,f]$, и равенство выполнено (если же
-$A\cap B=\emptyset$, оно тем более верно).
+(если $A\cap B\subset C$, то присоединение $A\cap B$ к $C$ ничего не
+добавляет; обратно, $A\cap B\subset(A\cap B)\cup C=C$). Итак, вопрос
+в том, когда пересечение двух отрезков лежит в третьем. Будем считать,
+что $a\le b$, $c\le d$, $e\le f$.
 
-Тождеством равенство не является: при $A=B=[0,1]$, $C=[2,3]$ слева
-$[0,1]\cup[2,3]$, справа $[2,3]$. Вообще, равенство верно в точности при
-$A\cap B\subset C$; условия задачи "--- достаточные (а при
-$A\cap B\neq\emptyset$ и необходимые).
+Посмотрим на примеры.
+
+(1) $A=[0,2]$, $B=[1,3]$, $C=[\frac12,\frac52]$. Здесь
+$e=\frac12\le\max(a,c)=1$ и $f=\frac52\ge\min(b,d)=2$; пересечение
+$A\cap B=[1,2]$ лежит в $C$, и обе части равенства равны $[\frac12,\frac52]$.
+
+(2) $A=B=[0,1]$, $C=[2,3]$. Условие нарушено: $e=2>\max(a,c)=0$. Левая
+часть равна $[0,1]\cup[2,3]$, правая "--- $[2,3]$; равенство неверно.
+
+Теперь общий случай. Точка $x$ лежит в $A\cap B$, если $a\le x\le b$
+и $c\le x\le d$, т.\,е. если $\max(a,c)\le x\le\min(b,d)$. Поэтому
+$A\cap B=[\max(a,c),\min(b,d)]$ при $\max(a,c)\le\min(b,d)$, а иначе
+$A\cap B=\emptyset$. Пусть выполнены условия задачи: $e\le\max(a,c)$,
+$f\ge\min(b,d)$. Тогда для любой точки $x\in A\cap B$
+\[
+e\le\max(a,c)\le x\le\min(b,d)\le f,
+\]
+т.\,е. $x\in C$. Значит, $A\cap B\subset C$, и равенство выполнено (если
+$A\cap B=\emptyset$, оно верно тем более).
+
+Тождеством равенство не является: пример (2) показывает, что при других
+отрезках оно нарушается.
+
+Заметим еще, что при $A\cap B\ne\emptyset$ условия задачи не только
+достаточны, но и необходимы: концы $\max(a,c)$ и $\min(b,d)$ отрезка
+$A\cap B$ сами принадлежат $A\cap B$, и если $A\cap B\subset C$, то
+$e\le\max(a,c)$ и $\min(b,d)\le f$.
+
+\answer При $e\le\max(a,c)$, $f\ge\min(b,d)$ пересечение $A\cap B$ лежит
+в $C$, поэтому $(A\cap B)\cup C=C=C\cup(B\cap C)$. Тождеством это
+равенство не является: например, при $A=B=[0,1]$, $C=[2,3]$ левая часть
+равна $[0,1]\cup[2,3]$, а правая "--- $[2,3]$.
 \end{solution}
 
 \begin{solution}[4 (\S\,1)]
-Индукция по $n$. При $n=2$ это $10^\circ$, $11^\circ$. Пусть (1.5) верно
-для $n$. Тогда по ассоциативности, $10^\circ$ и предположению индукции
-\begin{align*}
-\ov{\bigcap_{i=1}^{n+1}A_i}&\equiv\ov{\Bigl(\bigcap_{i=1}^{n}A_i\Bigr)\cap A_{n+1}}
-\equiv\ov{\bigcap_{i=1}^{n}A_i}\cup\ov{A_{n+1}}\equiv\\
-&\equiv\Bigl(\bigcup_{i=1}^{n}\ov{A_i}\Bigr)\cup\ov{A_{n+1}}\equiv\bigcup_{i=1}^{n+1}\ov{A_i}.
-\end{align*}
-Второе тождество получается так же из $11^\circ$ (или из первого,
-примененного к $\ov{A_i}$, с последующим взятием дополнения и законом
-$9^\circ$). Можно рассуждать и непосредственно: $x\notin\bigcap A_i$
-$\iff$ $x\notin A_i$ хотя бы для одного $i$ $\iff$ $x\in\bigcup\ov{A_i}$.
+Смысл первого тождества: точка не лежит в пересечении $A_1\cap\dots\cap A_n$
+тогда и только тогда, когда она не лежит хотя бы в одном из $A_i$, т.\,е.
+лежит хотя бы в одном из $\ov{A_i}$. Выведем его из $10^\circ$ "--- сначала
+для трех множеств, чтобы увидеть, как устроен шаг. По соглашению (1.3)
+запись $A_1\cap A_2\cap A_3$ означает $(A_1\cap A_2)\cap A_3$ (скобки можно
+опускать в силу $3^\circ$). Применим $10^\circ$ к множествам $A_1\cap A_2$
+и $A_3$, а затем еще раз "--- к $A_1$ и $A_2$:
+\begin{multline*}
+\ov{A_1\cap A_2\cap A_3}\equiv\ov{(A_1\cap A_2)\cap A_3}
+\overset{10^\circ}{\equiv}\ov{A_1\cap A_2}\cup\ov{A_3}\overset{10^\circ}{\equiv}{}\\
+\equiv(\ov{A_1}\cup\ov{A_2})\cup\ov{A_3}\overset{4^\circ}{\equiv}
+\ov{A_1}\cup\ov{A_2}\cup\ov{A_3}.
+\end{multline*}
+Тот же шаг "--- отделить последнее множество и применить $10^\circ$ "---
+годится при любом числе множеств. Оформим это как индукцию по числу
+множеств $n\ge2$. Обозначим через $P(n)$ утверждение
+\begin{keystmt}
+для любых множеств $A_1,\dots,A_n$ выполнено
+$\ov{\bigcap_{i=1}^{n}A_i}\equiv\bigcup_{i=1}^{n}\ov{A_i}$.
+\end{keystmt}
+
+\emph{База}, $n=2$: это свойство $10^\circ$.
+
+\emph{Шаг.} Пусть $P(n)$ верно; докажем $P(n+1)$. Возьмем множества
+$A_1,\dots,A_{n+1}$ и обозначим $X=\bigcap_{i=1}^{n}A_i$; тогда
+$\bigcap_{i=1}^{n+1}A_i\equiv X\cap A_{n+1}$ (это и есть смысл записи
+(1.3)). По $10^\circ$, примененному к $X$ и $A_{n+1}$, и по
+предположению $P(n)$
+\begin{multline*}
+\ov{\bigcap_{i=1}^{n+1}A_i}\equiv\ov{X\cap A_{n+1}}\overset{10^\circ}{\equiv}
+\ov X\cup\ov{A_{n+1}}\overset{P(n)}{\equiv}{}\\
+\equiv\Bigl(\bigcup_{i=1}^{n}\ov{A_i}\Bigr)\cup\ov{A_{n+1}}
+\overset{4^\circ}{\equiv}\bigcup_{i=1}^{n+1}\ov{A_i}.
+\end{multline*}
+Тем самым $P(n+1)$ доказано, и по принципу математической индукции $P(n)$
+верно при всех $n\ge2$. (Здесь достаточно обычной индукции: шаг
+использует только $P(n)$.)
+
+Второе тождество не нужно доказывать заново "--- оно следует из первого.
+Применим первое тождество к множествам $\ov{A_1},\dots,\ov{A_n}$:
+\[
+\ov{\bigcap_{i=1}^{n}\ov{A_i}}\equiv\bigcup_{i=1}^{n}\ov{\ov{A_i}}
+\overset{9^\circ}{\equiv}\bigcup_{i=1}^{n}A_i .
+\]
+Возьмем дополнения обеих частей (дополнения равных множеств равны): слева
+по $9^\circ$ получится $\bigcap_{i=1}^{n}\ov{A_i}$, справа
+$\ov{\bigcup_{i=1}^{n}A_i}$. Это и есть второе тождество (1.5).
+
+\answer Оба правила де Моргана (1.5) верны для любого числа $n\ge2$
+множеств: первое доказано индукцией по $n$ с базой $10^\circ$, второе
+получено из первого заменой $A_i$ на $\ov{A_i}$ и переходом
+к дополнениям.
 \end{solution}
