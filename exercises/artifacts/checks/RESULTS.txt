@@ -1,0 +1,170 @@
+===================== python3 identities.py
+--- §1, exercise 1: identities (1.4)
+OK   A△B ≡ (A∪B)\(A∩B): identity
+OK   A∪B ≡ (A△B)△(A∩B): identity
+OK   A\B ≡ A△(A∩B): identity
+OK   (A∩B)∪B ≡ B: identity
+OK   (A∪B)∩B ≡ B: identity
+OK   (A∩B)∪(A∩B̄) ≡ A: identity
+OK   (A∪B)∩(A∪B̄) ≡ A: identity
+OK   (Ā∩B)∪(A∩B̄) ≡ (A∪B)∩(Ā∪B̄): identity
+--- §1, exercise 2: symmetric difference
+OK   A△B ≡ B△A: identity
+OK   A△(B△C) ≡ (A△B)△C: identity
+OK   A△(B△C) = 'odd number of the three sets': identity
+OK   the book's final form K100∪K111∪K010∪K001: identity
+OK   §1 worked example (p. 15) with ∪: (A∩B̄∩C)∪(A∩C) ≡ A∩C: identity
+OK   §1 example as printed with ∩ is not ≡ A∩C: NOT an identity, differs at codes 111
+--- §1, exercise 3: intervals on the line (random tests, exact arithmetic)
+OK   conditions e<=max(a,c), f>=min(b,d) imply the equality
+OK   and are necessary when A∩B is non-empty
+--- §1, exercise 4: De Morgan for n components
+OK   complement of A1∩...∩A2 ≡ union of complements: identity
+OK   complement of A1∪...∪A2 ≡ intersection of complements: identity
+OK   complement of A1∩...∩A3 ≡ union of complements: identity
+OK   complement of A1∪...∪A3 ≡ intersection of complements: identity
+OK   complement of A1∩...∩A4 ≡ union of complements: identity
+OK   complement of A1∪...∪A4 ≡ intersection of complements: identity
+OK   complement of A1∩...∩A5 ≡ union of complements: identity
+OK   complement of A1∪...∪A5 ≡ intersection of complements: identity
+OK   complement of A1∩...∩A6 ≡ union of complements: identity
+OK   complement of A1∪...∪A6 ≡ intersection of complements: identity
+--- §2, exercise 1: identities via Euler diagrams
+OK   (A∪C)∩B ≡ (A∩B)∪(Ā∩B∩C): identity
+OK   [A∩(B∪C)]∪(Ā∩C) ≡ C∪(A∩B): identity
+OK   (A∩C)∪(B∩C)∪(C\A) ≡ C: identity
+OK   A△B ≡ (A∪B)\(A∩B): identity
+OK   [A∩(B△C)]∪(B△C) ≡ B△C: identity
+OK   as printed: A∪[(B\Ā)△C] ≡ (A∩B)△C: NOT an identity, differs at codes 100, 111
+OK   restored: A∩[(B\Ā)△C] ≡ (A∩B)△(A∩C): identity
+OK   ∩ distributes over △: A∩(X△Y) ≡ (A∩X)△(A∩Y): identity
+    region sets (Fig. 3б numbering) used in the solution:
+      A                [1, 2, 4, 7]
+      B                [1, 2, 3, 5]
+      C                [1, 3, 4, 6]
+      A∪C              [1, 2, 3, 4, 6, 7]
+      (A∪C)∩B          [1, 2, 3]
+      A∩B              [1, 2]
+      Ā∩B∩C            [3]
+      A∩(B∪C)          [1, 2, 4]
+      Ā∩C              [3, 6]
+      A∩C              [1, 4]
+      B∩C              [1, 3]
+      C\A              [3, 6]
+      A△B              [3, 4, 5, 7]
+      A∪B              [1, 2, 3, 4, 5, 7]
+      B△C              [2, 4, 5, 6]
+      A∩(B△C)          [2, 4]
+      (B\Ā)△C          [2, 3, 4, 6]
+      A∪[(B\Ā)△C]      [1, 2, 3, 4, 6, 7]
+      (A∩B)△C          [2, 3, 4, 6]
+      A∩[(B\Ā)△C]      [2, 4]
+      (A∩B)△(A∩C)      [2, 4]
+--- text of §3 (pp. 19-21)
+OK   (1.6) is self-dual: (A∩B)∪(A∩C)∪(B∩C) ≡ (A∪B)∩(A∪C)∩(B∪C): identity
+OK   warm-up: (A∩B)∪(Ā∩I) vs its dual (A∪B)∩(Ā∪∅) — not self-dual: NOT an identity, differs at codes 00, 11
+OK     ... (A∩B)∪(Ā∩I) ≡ Ā∪B: identity
+OK     ... (A∪B)∩(Ā∪∅) ≡ Ā∩B: identity
+OK   Example 2 (p. 20): M ≡ A1∪(A2∩A3): identity
+OK   Example 2, dual identity: M* ≡ A1∩(A2∪A3): identity
+
+all identity checks passed
+
+===================== python3 boolean_tables.py
+ex.1: self-dual 2-place tables: ['A', 'B', 'not B', 'not A']
+OK   ex.1: exactly A, B, not A, not B; none depends on both arguments
+OK   ex.2/5: mu(1) = 2 = 2^(2^0)
+OK   ex.2/5: mu(2) = 4 = 2^(2^1)
+OK   ex.2/5: mu(3) = 16 = 2^(2^2)
+OK   ex.2/5: mu(4) = 256 = 2^(2^3)
+OK   ex.5: direct enumeration gives the same mu(5) = 65536
+OK   ex.2: (A1&G)|(~A1&G*) gives exactly the self-dual tables, bijectively (n=2)
+OK   ex.2: (A1&G)|(~A1&G*) gives exactly the self-dual tables, bijectively (n=3)
+OK   ex.2: (A1&G)|(~A1&G*) gives exactly the self-dual tables, bijectively (n=4)
+OK   ex.2: n=3 -> 16 = 6 degenerate + 8 majorities + 2 parities
+OK   ex.3: F&F*=0 <=> F|F*=I <=> F*=~F <=> even (all tables, n=1); 2 even = 2^(2^0)
+OK   ex.3: F&F*=0 <=> F|F*=I <=> F*=~F <=> even (all tables, n=2); 4 even = 2^(2^1)
+OK   ex.3: F&F*=0 <=> F|F*=I <=> F*=~F <=> even (all tables, n=3); 16 even = 2^(2^2)
+OK   ex.3: F&F*=0 <=> F|F*=I <=> F*=~F <=> even (all tables, n=4); 256 even = 2^(2^3)
+OK   ex.3: H(A1^A2, ..., A1^An) gives exactly the even tables (n=2)
+OK   ex.3: H(A1^A2, ..., A1^An) gives exactly the even tables (n=3)
+OK   ex.3: H(A1^A2, ..., A1^An) gives exactly the even tables (n=4)
+OK   ex.3: n=1 -> even formulas are exactly the empty set and I
+OK   ex.4: F_3 is self-dual and depends on all 3 arguments
+OK   ex.4: F_4 is self-dual and depends on all 4 arguments
+OK   ex.4: F_5 is self-dual and depends on all 5 arguments
+OK   ex.4: F_6 is self-dual and depends on all 6 arguments
+OK   ex.4: F_7 is self-dual and depends on all 7 arguments
+OK   ex.4: F_8 is self-dual and depends on all 8 arguments
+OK   ex.4: for n=2 the same formula degenerates to A_2
+OK   ex.4: majority of 3 sets is self-dual and strictly 3-place
+OK   ex.4: majority of 5 sets is self-dual and strictly 5-place
+OK   ex.4: majority of 7 sets is self-dual and strictly 7-place
+ex.6: tau by brute force: [2, 0, 10, 208, 64386]  by recursion: [2, 0, 10, 208, 64386]
+OK   ex.6: tau = 2, 0, 10, 208, 64386 (brute force = recursion, n = 1..5)
+OK   ex.6: binomial inversion tau(n) = sum (-1)^(n-k) C(n,k) mu(k) agrees
+OK   ex.7: lambda(F)+lambda(F*)=2^n for all F; #balanced = C(2^n,2^(n-1)) = 2 (n=1)
+OK   ex.7: lambda(F)+lambda(F*)=2^n for all F; #balanced = C(2^n,2^(n-1)) = 6 (n=2)
+OK   ex.7: lambda(F)+lambda(F*)=2^n for all F; #balanced = C(2^n,2^(n-1)) = 70 (n=3)
+OK   ex.7: lambda(F)+lambda(F*)=2^n for all F; #balanced = C(2^n,2^(n-1)) = 12870 (n=4)
+OK   ex.7: n=3 -> 70 balanced = 16 self-dual + 6 even + 48 others
+OK   ex.7: every self-dual formula is balanced (n <= 4)
+OK   ex.7: even formulas are balanced only when made of half the pairs: n=2 -> 2 of 4, n=3 -> 6 of 16; empty set and I are even but not balanced
+OK   ex.7: not(A xor (B&C)) = K000+K111+K001+K010: balanced, neither self-dual nor even
+
+all §3 checks passed
+
+===================== python3 venn_constructions.py
+OK   ex.2: 1 convex regions realise all 2 states (eps = 0.667)
+OK   ex.2: 2 convex regions realise all 4 states (eps = 0.333)
+OK   ex.2: 3 convex regions realise all 8 states (eps = 0.0976)
+OK   ex.2: 4 convex regions realise all 16 states (eps = 0.0254)
+OK   ex.2: 5 convex regions realise all 32 states (eps = 0.0064)
+OK   ex.2: 6 convex regions realise all 64 states (eps = 0.00161)
+OK   ex.2: 7 convex regions realise all 128 states (eps = 0.000402)
+OK   ex.2: 8 convex regions realise all 256 states (eps = 0.0001)
+OK   ex.3: 1 translates realise all 2 states (min |P+ - P-| = 1.31, all n*2^n points distinct)
+OK   ex.3: 2 translates realise all 4 states (min |P+ - P-| = 0.344, all n*2^n points distinct)
+OK   ex.3: 3 translates realise all 8 states (min |P+ - P-| = 0.344, all n*2^n points distinct)
+OK   ex.3: 4 translates realise all 16 states (min |P+ - P-| = 0.0768, all n*2^n points distinct)
+OK   ex.3: 5 translates realise all 32 states (min |P+ - P-| = 0.0768, all n*2^n points distinct)
+OK   ex.3: 6 translates realise all 64 states (min |P+ - P-| = 0.0235, all n*2^n points distinct)
+ex.3: n^2-n+2 vs 2^n: [(1, 2, 2), (2, 4, 4), (3, 8, 8), (4, 14, 16), (5, 22, 32), (6, 32, 64)]
+
+all construction checks passed
+
+===================== python3 associativity.py
+OK   ex.1: phi0 (velocities) = h^-1[h(x)*h(y)] and is associative
+OK   ex.1: phi1 = x+y+a*xy = h^-1[h(x)*h(y)] and is associative
+OK   ex.1: phi2 = sqrt(x^2+y^2+a^2) = h^-1[h(x)*h(y)] and is associative
+OK   ex.1: phi3 = xy/(x+y-a*xy) = h^-1[h(x)*h(y)] and is associative
+OK   ex.2: x*y = x|y| is associative
+OK   ex.2: ... and not commutative: 1*(-1) = 1, (-1)*1 = -1
+OK   ex.2: x*y = x is associative and not commutative
+OK   ex.3: phi_0 = x + y and phi_1 = xy
+OK   ex.3: h_t^{-1}(y) = y/t - W((1-t)/t e^{y/t}) inverts h_t (0<t<1)
+OK   ex.3: phi_t is commutative and associative for random t in (0,1)
+OK   ex.3: h_t is increasing (h_t' = (1-t)e^x + t > 0)
+OK   ex.6: psi = x1 - x2 + x3 is ternary associative
+OK   ex.6: n=3, zeta=exp(2 pi i 1/2): sum zeta^(i-1) x_i is 3-ary associative
+OK   ex.6: n=4, zeta=exp(2 pi i 1/3): sum zeta^(i-1) x_i is 4-ary associative
+OK   ex.6: n=4, zeta=exp(2 pi i 2/3): sum zeta^(i-1) x_i is 4-ary associative
+OK   ex.6: n=5, zeta=exp(2 pi i 1/4): sum zeta^(i-1) x_i is 5-ary associative
+OK   ex.6: n=5, zeta=exp(2 pi i 2/4): sum zeta^(i-1) x_i is 5-ary associative
+OK   ex.6: n=5, zeta=exp(2 pi i 3/4): sum zeta^(i-1) x_i is 5-ary associative
+OK   ex.6: n=6, zeta=exp(2 pi i 1/5): sum zeta^(i-1) x_i is 6-ary associative
+OK   ex.6: n=6, zeta=exp(2 pi i 2/5): sum zeta^(i-1) x_i is 6-ary associative
+OK   ex.6: n=6, zeta=exp(2 pi i 3/5): sum zeta^(i-1) x_i is 6-ary associative
+OK   ex.6: n=6, zeta=exp(2 pi i 4/5): sum zeta^(i-1) x_i is 6-ary associative
+OK   ex.6: n=7, zeta=exp(2 pi i 1/6): sum zeta^(i-1) x_i is 7-ary associative
+OK   ex.6: n=7, zeta=exp(2 pi i 2/6): sum zeta^(i-1) x_i is 7-ary associative
+OK   ex.6: n=7, zeta=exp(2 pi i 3/6): sum zeta^(i-1) x_i is 7-ary associative
+OK   ex.6: n=7, zeta=exp(2 pi i 4/6): sum zeta^(i-1) x_i is 7-ary associative
+OK   ex.6: n=7, zeta=exp(2 pi i 5/6): sum zeta^(i-1) x_i is 7-ary associative
+OK   ex.6: real alternating sum x1 - x2 + ... + x3 is 3-ary associative
+OK   ex.6: real alternating sum x1 - x2 + ... + x5 is 5-ary associative
+OK   ex.6: real alternating sum x1 - x2 + ... + x7 is 7-ary associative
+OK   ex.6: for even n the alternating sum is NOT associative (n=4: values differ)
+
+all §4 checks passed
+
