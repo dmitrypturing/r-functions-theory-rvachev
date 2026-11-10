@@ -168,3 +168,43 @@ OK   ex.6: for even n the alternating sum is NOT associative (n=4: values differ
 
 all §4 checks passed
 
+===================== python3 section5.py
+OK   (1.17): the scheme of Fig. 11a with f=x+y+z, phi=xy, psi=z^t gives x + xy + z^t
+OK   Fig. 12a computes x^3+2x^2+3x+4 with 4 multipliers and 3 adders
+OK   Fig. 12b computes the same polynomial with 2 multipliers and 3 adders
+OK   printed formula ((x+2)+3)x+4 = x^2+5x+4 is a different polynomial
+OK   ex.2: e^{sin x} = 1 + x + x^2/2 + 0x^3 - x^4/8 - x^5/15 + ... (formal substitution)
+OK   ex.2: the substituted series sums to e^{sin x} at x = 0.1
+OK   ex.2: 1/(1-y) with y = 2x gives coefficients 2^k (radius 1/2, not 1)
+OK   ex.4: x - y is realised through H with the same domain
+OK   ex.4: x / y is realised through H with the same domain
+OK   ex.4: x^3 is realised through H with the same domain
+OK   ex.4: x^(-2) is realised through H with the same domain
+OK   ex.4: x^(1/2) is realised through H with the same domain
+OK   ex.4: x^(-1/2) is realised through H with the same domain
+OK   ex.4: x^pi is realised through H with the same domain
+OK   ex.4: a^x (a=2.5) is realised through H with the same domain
+OK   ex.4: a^x (a=0.3) is realised through H with the same domain
+OK   ex.4: e^x is realised through H with the same domain
+OK   ex.4: log_a x (a=10) is realised through H with the same domain
+OK   ex.4: log_a x (a=0.5) is realised through H with the same domain
+OK   ex.4: cos x is realised through H with the same domain
+OK   ex.4: tg x is realised through H with the same domain
+OK   ex.4: ctg x is realised through H with the same domain
+OK   ex.4: arccos x is realised through H with the same domain
+OK   ex.4: arctg x is realised through H with the same domain
+OK   ex.4: arcctg x is realised through H with the same domain
+OK   ex.5: for f = xy + z the values at x = 0 and x = 1 separate all points (y, z)
+OK   ex.5: a sample continuous u on the unit circle crosses its mid level at least twice
+OK   ex.5: m(R) = 4R e^{2R^2} is the maximum of |f| on the box max|x_p| <= R
+OK   ex.5: |g(x)| < 1/(1 + max|x_p|), also for x = h^{-1}(y) with y near the edge
+OK   ex.6: table for phi1(x, phi2(y,z)): 2C(N+2,2) = 2,6,12,20,30,42,56; C(N+3,3) = 1,4,10,20,35,56,84
+OK   ex.6: s*C(N+2,2) < C(N+3,3) exactly when N + 3 > 3s (s < 80, N < 400)
+OK   ex.6: for k < n and s = 1, 5, 20, 100 some N gives s*C(N+k,k) < C(N+n,n)
+OK   ex.6, lemma 2: c1 = u^2, c2 = u^3 satisfy a nonzero rational equation R(c1, c2) = 0 (found among monomials of degree <= 4)
+OK   ex.6, lemma 2: c1 = u + u^2, c2 = u^3 - u satisfy a nonzero rational equation R(c1, c2) = 0 (found among monomials of degree <= 4)
+OK   ex.6, lemma 2: c1 = 2u - 1, c2 = u^2/3 + u satisfy a nonzero rational equation R(c1, c2) = 0 (found among monomials of degree <= 2)
+OK   ex.6, lemma 2: for c1 = u^2, c2 = u^3 the equation found is c1^3 - c2^2 = 0
+
+all §5 checks passed
+
